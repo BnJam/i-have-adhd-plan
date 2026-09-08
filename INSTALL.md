@@ -65,6 +65,17 @@ claude plugin marketplace add BnJam/i-have-adhd-plan
 claude plugin install i-have-adhd-plan@i-have-adhd-plan
 ```
 
+If Claude reports `Marketplace 'i-have-adhd' already on disk`, remove the
+existing marketplace registration by its configured name, then add this
+repository. Removing the marketplace entry does not uninstall the original
+`i-have-adhd` plugin:
+
+```bash
+claude plugin marketplace remove i-have-adhd
+claude plugin marketplace add BnJam/i-have-adhd-plan
+claude plugin install i-have-adhd-plan@i-have-adhd-plan
+```
+
 Type `/i-have-adhd-plan`.
 
 ### Verify
