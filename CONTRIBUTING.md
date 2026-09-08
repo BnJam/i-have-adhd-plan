@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for improving **i-have-adhd**. Contributions from humans and coding agents are welcome. Keep changes understandable, reviewable, safe to run, and compatible with existing users.
+Thanks for improving **i-have-adhd-plan**. Contributions from humans and coding agents are welcome. Keep changes understandable, reviewable, safe to run, and compatible with existing users.
 
 ## Authorship and provenance
 
@@ -65,11 +65,11 @@ Preserve existing installation methods, invocation names, file locations, opt-in
 
 A breaking change requires an issue, migration path, updated documentation, and a compatibility or deprecation plan. Prefer additive, staged changes.
 
-`skills/i-have-adhd/SKILL.md` is canonical. When it changes, synchronize the Cursor copy:
+`skills/i-have-adhd-plan/SKILL.md` is canonical. When it changes, synchronize the Cursor copy:
 
 ```sh
-cp skills/i-have-adhd/SKILL.md .cursor/skills/i-have-adhd/SKILL.md
-cmp skills/i-have-adhd/SKILL.md .cursor/skills/i-have-adhd/SKILL.md
+cp skills/i-have-adhd-plan/SKILL.md .cursor/skills/i-have-adhd-plan/SKILL.md
+cmp skills/i-have-adhd-plan/SKILL.md .cursor/skills/i-have-adhd-plan/SKILL.md
 ```
 
 Review platform-specific manifests and documentation whenever shared names, descriptions, paths, or behavior change.

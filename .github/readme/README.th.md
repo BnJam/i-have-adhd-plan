@@ -1,11 +1,11 @@
 <p align="center">
-  <img src="../../logo.png" alt="i-have-adhd" width="140" />
+  <img src="../../logo.png" alt="i-have-adhd-plan" width="140" />
 </p>
 <p align="center">
   <strong align="center">ตอบได้ใจความ ไม่ยืดเยื้อ จะสมาธิสั้นหรือไม่ก็เข้าใจได้!</strong>
 </p>
 <p align="center">
-  <a href="../../LICENSE"><img src="https://img.shields.io/github/license/ayghri/i-have-adhd?style=flat" alt="สัญญาอนุญาต"></a>
+  <a href="../../LICENSE"><img src="https://img.shields.io/github/license/BnJam/i-have-adhd-plan?style=flat" alt="สัญญาอนุญาต"></a>
 </p>
 
 <p align="center">
@@ -23,7 +23,7 @@
 คัดลอกข้อความนี้ไปวางในพรอมต์ของ CLI:
 
 ```text
-Install the i-have-adhd skill/plugin from https://github.com/ayghri/i-have-adhd, refer to the repo's AGENTS.md for instructions.
+Install the i-have-adhd-plan skill/plugin from https://github.com/BnJam/i-have-adhd-plan, refer to the repo's AGENTS.md for instructions.
 ```
 
 หรือ 🔗 [ดูวิธีติดตั้ง](../../INSTALL.md) (ภาษาอังกฤษ)
@@ -62,7 +62,7 @@ Install the i-have-adhd skill/plugin from https://github.com/ayghri/i-have-adhd,
 
 ## กฎการตอบ
 
-มีทั้งหมด 10 ข้อ อ่านฉบับเต็มได้ใน [SKILL.md](../../skills/i-have-adhd/SKILL.md)
+มีทั้งหมด 10 ข้อ อ่านฉบับเต็มได้ใน [SKILL.md](../../skills/i-have-adhd-plan/SKILL.md)
 
 1. เริ่มต้นด้วยสิ่งที่ทำถัดไป
 2. ใช้หมายเลขกำกับในกรณีที่งานมีหลายขั้นตอน
@@ -77,16 +77,14 @@ Install the i-have-adhd skill/plugin from https://github.com/ayghri/i-have-adhd,
 
 ## ปรับแต่งเพิ่มเติม
 
-Fork โปรเจกต์นี้ และแก้ไขไฟล์ `skills/i-have-adhd/SKILL.md` จากนั้นเปลี่ยนไปใช้เวอร์ชันของคุณด้วยคำสั่งต่อไปนี้:
+Fork โปรเจกต์นี้ และแก้ไขไฟล์ `skills/i-have-adhd-plan/SKILL.md` จากนั้นเปลี่ยนไปใช้เวอร์ชันของคุณด้วยคำสั่งต่อไปนี้:
 
 ```bash
-claude plugin uninstall i-have-adhd            # drop the upstream copy first:
-claude plugin marketplace remove i-have-adhd   # fork and upstream share both names
-claude plugin marketplace add <your-username>/i-have-adhd
-claude plugin install i-have-adhd@i-have-adhd
+claude plugin marketplace add <your-username>/i-have-adhd-plan
+claude plugin install i-have-adhd-plan@i-have-adhd-plan
 ```
 
-รีสตาร์ต Claude Code จากนั้นเรียกใช้ `/i-have-adhd` อีกครั้ง
+รีสตาร์ต Claude Code จากนั้นเรียกใช้ `/i-have-adhd-plan` อีกครั้ง
 
 ## เครดิต
 

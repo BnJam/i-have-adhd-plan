@@ -17,7 +17,7 @@ First recorded run of the harness in `scripts/`. Reproduce with the commands in
 ## Scores
 
 Baseline is the bare task prompt. Candidate is the same prompt with the
-`i-have-adhd` skill body injected as a response-style instruction.
+`i-have-adhd-plan` skill body injected as a response-style instruction.
 
 | Dimension | Weight | Baseline | Candidate | Δ |
 | --- | ---: | ---: | ---: | ---: |

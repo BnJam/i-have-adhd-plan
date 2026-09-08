@@ -20,7 +20,7 @@ class OpenCodePluginTest(unittest.TestCase):
         self.plugin_root = Path(self.temp_dir.name) / "plugin"
         shutil.copytree(ROOT / ".opencode", self.plugin_root / ".opencode")
         shutil.copytree(ROOT / "skills", self.plugin_root / "skills")
-        # The plugin reads its flag from $XDG_CONFIG_HOME/opencode/.i-have-adhd-always.
+        # The plugin reads its flag from $XDG_CONFIG_HOME/opencode/.i-have-adhd-plan-always.
         self.config_dir = Path(self.temp_dir.name) / "config"
         (self.config_dir / "opencode").mkdir(parents=True)
 
@@ -31,7 +31,7 @@ class OpenCodePluginTest(unittest.TestCase):
             [
                 "node",
                 str(ROOT / "tests" / "opencode_plugin_driver.mjs"),
-                str(self.plugin_root / ".opencode" / "plugins" / "i-have-adhd.mjs"),
+                str(self.plugin_root / ".opencode" / "plugins" / "i-have-adhd-plan.mjs"),
             ],
             check=False,
             capture_output=True,
@@ -40,10 +40,10 @@ class OpenCodePluginTest(unittest.TestCase):
         )
 
     def opt_in(self):
-        (self.config_dir / "opencode" / ".i-have-adhd-always").touch()
+        (self.config_dir / "opencode" / ".i-have-adhd-plan-always").touch()
 
     def write_skill(self, text):
-        (self.plugin_root / "skills" / "i-have-adhd" / "SKILL.md").write_text(text)
+        (self.plugin_root / "skills" / "i-have-adhd-plan" / "SKILL.md").write_text(text)
 
     def test_silent_without_opt_in_flag(self):
         result = self.run_plugin()

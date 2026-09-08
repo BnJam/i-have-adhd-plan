@@ -1,11 +1,11 @@
 <p align="center">
-  <img src="../../logo.png" alt="i-have-adhd" width="140" />
+  <img src="../../logo.png" alt="i-have-adhd-plan" width="140" />
 </p>
 <p align="center">
   <strong align="center">ADHD 친화적인 출력. ADHD 진단은 필요 없어요!</strong>
 </p>
 <p align="center">
-  <a href="../../LICENSE"><img src="https://img.shields.io/github/license/ayghri/i-have-adhd?style=flat" alt="License"></a>
+  <a href="../../LICENSE"><img src="https://img.shields.io/github/license/BnJam/i-have-adhd-plan?style=flat" alt="License"></a>
 </p>
 
 <p align="center">
@@ -60,7 +60,7 @@
 
 ## 규칙
 
-10가지 규칙. 전문은 [SKILL.md](../../skills/i-have-adhd/SKILL.md)에 있습니다.
+10가지 규칙. 전문은 [SKILL.md](../../skills/i-have-adhd-plan/SKILL.md)에 있습니다.
 
 1. 다음 행동부터 말하기.
 2. 다단계 작업은 번호로.
@@ -75,16 +75,14 @@
 
 ## 커스터마이즈
 
-저장소를 포크해 `skills/i-have-adhd/SKILL.md`를 수정한 다음, 본인 복사본으로 교체하세요:
+저장소를 포크해 `skills/i-have-adhd-plan/SKILL.md`를 수정한 다음, 본인 복사본으로 교체하세요:
 
 ```bash
-claude plugin uninstall i-have-adhd            # 먼저 업스트림 버전 제거
-claude plugin marketplace remove i-have-adhd   # 포크와 업스트림이 같은 이름을 씁니다
-claude plugin marketplace add <your-username>/i-have-adhd
-claude plugin install i-have-adhd@i-have-adhd
+claude plugin marketplace add <your-username>/i-have-adhd-plan
+claude plugin install i-have-adhd-plan@i-have-adhd-plan
 ```
 
-Claude Code를 재시작한 뒤 `/i-have-adhd`를 다시 호출하세요.
+Claude Code를 재시작한 뒤 `/i-have-adhd-plan`를 다시 호출하세요.
 
 ## 크레딧
 

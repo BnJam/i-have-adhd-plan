@@ -1,11 +1,11 @@
 <p align="center">
-  <img src="./logo.png" alt="i-have-adhd" width="140" />
+  <img src="./logo.png" alt="i-have-adhd-plan" width="140" />
 </p>
 <p align="center">
   <strong align="center">ADHD-friendly outputs. No ADHD diagnosis needed!</strong>
 </p>
 <p align="center">
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/ayghri/i-have-adhd?style=flat" alt="License"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/BnJam/i-have-adhd-plan?style=flat" alt="License"></a>
 </p>
 
 <p align="center">
@@ -24,7 +24,7 @@
 Copy/paste into your CLI prompt:
 
 ```text
-Install the `i-have-adhd` skill/plugin from this repository: https://github.com/BnJam/i-have-adhd-plan. The skill name remains `i-have-adhd` for compatibility; refer to `AGENTS.md` for repository instructions.
+Install the `i-have-adhd-plan` skill/plugin from this repository: https://github.com/BnJam/i-have-adhd-plan. Refer to `AGENTS.md` for repository instructions.
 ```
 
 Or 🔗 [check the installation instructions](INSTALL.md).
@@ -66,7 +66,7 @@ A skill for your coding assistant that stops it from burying the answer. Action 
 
 ## The rules
 
-10 rules. Full text in [SKILL.md](./skills/i-have-adhd/SKILL.md).
+10 rules. Full text in [SKILL.md](./skills/i-have-adhd-plan/SKILL.md).
 
 1. Lead with the next action.
 2. Number multi-step tasks.
@@ -85,16 +85,14 @@ verification, dependencies, and rollback points when the task needs them.
 
 ## Tune it
 
-Fork, edit `skills/i-have-adhd/SKILL.md`, then swap your copy in:
+To install this repository's uniquely named copy:
 
 ```bash
-claude plugin uninstall i-have-adhd            # drop the upstream copy first:
-claude plugin marketplace remove i-have-adhd   # fork and upstream share both names
-claude plugin marketplace add <your-username>/i-have-adhd
-claude plugin install i-have-adhd@i-have-adhd
+claude plugin marketplace add BnJam/i-have-adhd-plan
+claude plugin install i-have-adhd-plan@i-have-adhd-plan
 ```
 
-Restart Claude Code, then re-invoke `/i-have-adhd`.
+Restart Claude Code, then re-invoke `/i-have-adhd-plan`.
 
 ## Credits
 

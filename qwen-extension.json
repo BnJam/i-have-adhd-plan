@@ -1,5 +1,5 @@
 {
-  "name": "i-have-adhd",
+  "name": "i-have-adhd-plan",
   "version": "0.2.0",
   "description": "ADHD-friendly output shaping for Qwen Code: action first, compact executable plans, bounded steps, no tangents, and visible progress.",
   "skills": "skills"

@@ -1,11 +1,11 @@
 <p align="center">
-  <img src="../../logo.png" alt="i-have-adhd" width="140" />
+  <img src="../../logo.png" alt="i-have-adhd-plan" width="140" />
 </p>
 <p align="center">
   <strong align="center">Respostas amigáveis para quem tem TDAH. Sem precisar de diagnóstico!</strong>
 </p>
 <p align="center">
-  <a href="../../LICENSE"><img src="https://img.shields.io/github/license/ayghri/i-have-adhd?style=flat" alt="Licença"></a>
+  <a href="../../LICENSE"><img src="https://img.shields.io/github/license/BnJam/i-have-adhd-plan?style=flat" alt="Licença"></a>
 </p>
 
 <p align="center">
@@ -60,7 +60,7 @@ Uma skill para o seu assistente de código que impede que ele enterre a resposta
 
 ## As regras
 
-10 regras. Texto completo no [SKILL.md](../../skills/i-have-adhd/SKILL.md).
+10 regras. Texto completo no [SKILL.md](../../skills/i-have-adhd-plan/SKILL.md).
 
 1. Comece pela próxima ação.
 2. Numere tarefas de múltiplos passos.
@@ -75,16 +75,14 @@ Uma skill para o seu assistente de código que impede que ele enterre a resposta
 
 ## Personalize
 
-Faça um fork, edite `skills/i-have-adhd/SKILL.md` e troque pela sua cópia:
+Faça um fork, edite `skills/i-have-adhd-plan/SKILL.md` e troque pela sua cópia:
 
 ```bash
-claude plugin uninstall i-have-adhd            # remova a cópia do upstream primeiro:
-claude plugin marketplace remove i-have-adhd   # fork e upstream compartilham o mesmo nome
-claude plugin marketplace add <seu-usuario>/i-have-adhd
-claude plugin install i-have-adhd@i-have-adhd
+claude plugin marketplace add <seu-usuario>/i-have-adhd-plan
+claude plugin install i-have-adhd-plan@i-have-adhd-plan
 ```
 
-Reinicie o Claude Code e invoque `/i-have-adhd` de novo.
+Reinicie o Claude Code e invoque `/i-have-adhd-plan` de novo.
 
 ## Créditos
 

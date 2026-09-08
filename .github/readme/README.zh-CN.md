@@ -1,11 +1,11 @@
 <p align="center">
-  <img src="../../logo.png" alt="i-have-adhd" width="140" />
+  <img src="../../logo.png" alt="i-have-adhd-plan" width="140" />
 </p>
 <p align="center">
   <strong align="center">对 ADHD 友好的输出。无需确诊 ADHD！</strong>
 </p>
 <p align="center">
-  <a href="../../LICENSE"><img src="https://img.shields.io/github/license/ayghri/i-have-adhd?style=flat" alt="许可证"></a>
+  <a href="../../LICENSE"><img src="https://img.shields.io/github/license/BnJam/i-have-adhd-plan?style=flat" alt="许可证"></a>
 </p>
 
 <p align="center">
@@ -60,7 +60,7 @@
 
 ## 规则
 
-共 10 条规则。完整内容见 [SKILL.md](../../skills/i-have-adhd/SKILL.md)。
+共 10 条规则。完整内容见 [SKILL.md](../../skills/i-have-adhd-plan/SKILL.md)。
 
 1. 先说下一步行动。
 2. 多步骤任务使用编号。
@@ -75,16 +75,14 @@
 
 ## 自定义
 
-Fork 此仓库，编辑 `skills/i-have-adhd/SKILL.md`，然后换成你的副本：
+Fork 此仓库，编辑 `skills/i-have-adhd-plan/SKILL.md`，然后换成你的副本：
 
 ```bash
-claude plugin uninstall i-have-adhd            # 先移除上游副本：
-claude plugin marketplace remove i-have-adhd   # fork 与上游使用相同名称
-claude plugin marketplace add <your-username>/i-have-adhd
-claude plugin install i-have-adhd@i-have-adhd
+claude plugin marketplace add <your-username>/i-have-adhd-plan
+claude plugin install i-have-adhd-plan@i-have-adhd-plan
 ```
 
-重启 Claude Code，然后再次调用 `/i-have-adhd`。
+重启 Claude Code，然后再次调用 `/i-have-adhd-plan`。
 
 ## 致谢
 

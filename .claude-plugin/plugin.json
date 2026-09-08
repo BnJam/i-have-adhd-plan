@@ -1,5 +1,5 @@
 {
-  "name": "i-have-adhd",
+  "name": "i-have-adhd-plan",
   "version": "0.2.0",
   "description": "Shape Claude Code output for an ADHD reader: lead with the next action, use compact executable plans, number bounded steps, suppress tangents, restate state, and make wins visible.",
   "author": {

@@ -6,7 +6,7 @@
 ### Cài đặt
 
 ```bash
-agy plugin install https://github.com/ayghri/i-have-adhd
+agy plugin install https://github.com/BnJam/i-have-adhd-plan
 ```
 
 ### Xác minh
@@ -18,17 +18,17 @@ agy plugin list
 ### Cập nhật
 
 ```bash
-agy plugin uninstall i-have-adhd
-agy plugin install https://github.com/ayghri/i-have-adhd
+agy plugin uninstall i-have-adhd-plan
+agy plugin install https://github.com/BnJam/i-have-adhd-plan
 ```
 
 ### Gỡ cài đặt
 
 ```bash
-agy plugin uninstall i-have-adhd
+agy plugin uninstall i-have-adhd-plan
 ```
 
-Hoặc giữ nguyên cài đặt và tắt bằng `agy plugin disable i-have-adhd`.
+Hoặc giữ nguyên cài đặt và tắt bằng `agy plugin disable i-have-adhd-plan`.
 
 ### Luôn bật (không bắt buộc)
 
@@ -61,11 +61,11 @@ Ngoại lệ: giải thích đầy đủ khi được yêu cầu. Xác nhận tr
 ### Cài đặt
 
 ```bash
-claude plugin marketplace add ayghri/i-have-adhd
-claude plugin install i-have-adhd@i-have-adhd
+claude plugin marketplace add BnJam/i-have-adhd-plan
+claude plugin install i-have-adhd-plan@i-have-adhd-plan
 ```
 
-Gõ `/i-have-adhd`.
+Gõ `/i-have-adhd-plan`.
 
 ### Xác minh
 
@@ -76,36 +76,36 @@ claude plugin list
 ### Cập nhật
 
 ```bash
-claude plugin marketplace update i-have-adhd
+claude plugin marketplace update i-have-adhd-plan
 ```
 
 ### Gỡ cài đặt
 
 ```bash
-claude plugin uninstall i-have-adhd
-claude plugin marketplace remove i-have-adhd
+claude plugin uninstall i-have-adhd-plan
+claude plugin marketplace remove i-have-adhd-plan
 ```
 
-Hoặc giữ nguyên cài đặt và tắt bằng `claude plugin disable i-have-adhd`.
+Hoặc giữ nguyên cài đặt và tắt bằng `claude plugin disable i-have-adhd-plan`.
 
 ### Luôn bật (không bắt buộc)
 
-Hook `SessionStart` tải toàn bộ bộ quy tắc khi bắt đầu mỗi phiên, không cần `/i-have-adhd`:
+Hook `SessionStart` tải toàn bộ bộ quy tắc khi bắt đầu mỗi phiên, không cần `/i-have-adhd-plan`:
 
 ```bash
-touch ~/.claude/.i-have-adhd-always
+touch ~/.claude/.i-have-adhd-plan-always
 ```
 
 Nếu bạn dùng thư mục cấu hình Claude tùy chỉnh, hãy tạo tệp cờ ở đó thay vào đó:
 
 ```bash
-touch "$CLAUDE_CONFIG_DIR/.i-have-adhd-always"
+touch "$CLAUDE_CONFIG_DIR/.i-have-adhd-plan-always"
 ```
 
 Để trở lại chế độ bật khi cần:
 
 ```bash
-rm ~/.claude/.i-have-adhd-always
+rm ~/.claude/.i-have-adhd-plan-always
 ```
 
 Hook chỉ chạy khi tệp cờ tồn tại, vì vậy chỉ cài plugin sẽ không tự thay đổi gì. "stop adhd mode" vẫn tắt chế độ này cho phiên hiện tại.
@@ -119,11 +119,11 @@ Hook chỉ chạy khi tệp cờ tồn tại, vì vậy chỉ cài plugin sẽ k
 ### Cài đặt
 
 ```bash
-codex plugin marketplace add ayghri/i-have-adhd --ref main
-codex plugin add i-have-adhd@i-have-adhd
+codex plugin marketplace add BnJam/i-have-adhd-plan --ref main
+codex plugin add i-have-adhd-plan@i-have-adhd-plan
 ```
 
-Gọi skill một cách rõ ràng bằng cách gõ `$i-have-adhd`. Codex sẽ không tự động kích hoạt skill.
+Gọi skill một cách rõ ràng bằng cách gõ `$i-have-adhd-plan`. Codex sẽ không tự động kích hoạt skill.
 
 ### Xác minh
 
@@ -134,16 +134,16 @@ codex plugin list
 ### Cập nhật
 
 ```bash
-codex plugin marketplace upgrade i-have-adhd
-codex plugin remove i-have-adhd
-codex plugin add i-have-adhd@i-have-adhd
+codex plugin marketplace upgrade i-have-adhd-plan
+codex plugin remove i-have-adhd-plan
+codex plugin add i-have-adhd-plan@i-have-adhd-plan
 ```
 
 ### Gỡ cài đặt
 
 ```bash
-codex plugin remove i-have-adhd
-codex plugin marketplace remove i-have-adhd
+codex plugin remove i-have-adhd-plan
+codex plugin marketplace remove i-have-adhd-plan
 ```
 
 ### Luôn bật (không bắt buộc)
@@ -180,16 +180,16 @@ Gemini CLI không có chợ plugin nên có hai cách tích hợp sẵn: **lện
 
 ```bash
 mkdir -p ~/.gemini/commands
-curl -fsSL https://raw.githubusercontent.com/ayghri/i-have-adhd/main/skills/i-have-adhd/agents/gemini.toml \
-  -o ~/.gemini/commands/i-have-adhd.toml
+curl -fsSL https://raw.githubusercontent.com/BnJam/i-have-adhd-plan/main/skills/i-have-adhd-plan/agents/gemini.toml \
+  -o ~/.gemini/commands/i-have-adhd-plan.toml
 ```
 
-Bắt đầu phiên mới và gõ `/i-have-adhd`. Skill sẽ bật trong suốt phiên đó.
+Bắt đầu phiên mới và gõ `/i-have-adhd-plan`. Skill sẽ bật trong suốt phiên đó.
 
 ### Cài đặt (extension, always-on)
 
 ```bash
-gemini extensions install https://github.com/ayghri/i-have-adhd
+gemini extensions install https://github.com/BnJam/i-have-adhd-plan
 ```
 
 Extension tải `GEMINI.md`, tệp nhập toàn bộ skill, nên quy tắc được áp dụng từ tin nhắn đầu tiên. Máy phải cài `git`.
@@ -198,23 +198,23 @@ Extension tải `GEMINI.md`, tệp nhập toàn bộ skill, nên quy tắc đư�
 
 ```bash
 gemini extensions list          # cách dùng extension
-ls ~/.gemini/commands           # command route: i-have-adhd.toml present
+ls ~/.gemini/commands           # command route: i-have-adhd-plan.toml present
 ```
 
-Hoặc gõ `/` trong một phiên và xác nhận `i-have-adhd` có trong danh sách.
+Hoặc gõ `/` trong một phiên và xác nhận `i-have-adhd-plan` có trong danh sách.
 
 ### Cập nhật
 
 ```bash
-gemini extensions update i-have-adhd    # cách dùng extension
+gemini extensions update i-have-adhd-plan    # cách dùng extension
 # cách dùng lệnh: chạy lại curl ở trên
 ```
 
 ### Gỡ cài đặt
 
 ```bash
-gemini extensions uninstall i-have-adhd    # cách dùng extension
-rm ~/.gemini/commands/i-have-adhd.toml     # command route
+gemini extensions uninstall i-have-adhd-plan    # cách dùng extension
+rm ~/.gemini/commands/i-have-adhd-plan.toml     # command route
 ```
 
 </details>
@@ -227,21 +227,21 @@ Copilot đọc Agent Skills trực tiếp: cùng một `SKILL.md`, không cần 
 ### Cài đặt
 
 ```bash
-npx skills add ayghri/i-have-adhd -a github-copilot        # dự án này
-npx skills add ayghri/i-have-adhd -a github-copilot -g     # mọi dự án
+npx skills add BnJam/i-have-adhd-plan -a github-copilot        # dự án này
+npx skills add BnJam/i-have-adhd-plan -a github-copilot -g     # mọi dự án
 ```
 
 Nếu không dùng CLI, hãy sao chép thư mục skill vào bất kỳ thư mục nào Copilot quét:
 
 ```bash
-git clone https://github.com/ayghri/i-have-adhd
+git clone https://github.com/BnJam/i-have-adhd-plan
 mkdir -p ~/.copilot/skills
-cp -R i-have-adhd/skills/i-have-adhd ~/.copilot/skills/
+cp -R i-have-adhd-plan/skills/i-have-adhd-plan ~/.copilot/skills/
 ```
 
 ### Xác minh
 
-Gõ `/` trong ô chat và xác nhận `i-have-adhd` xuất hiện. Hoặc:
+Gõ `/` trong ô chat và xác nhận `i-have-adhd-plan` xuất hiện. Hoặc:
 
 ```bash
 npx skills list
@@ -251,7 +251,7 @@ npx skills ls -g    # nếu đã cài toàn cục
 ### Cập nhật
 
 ```bash
-npx skills update i-have-adhd
+npx skills update i-have-adhd-plan
 ```
 
 Hoặc sao chép lại thư mục sau `git pull`.
@@ -259,10 +259,10 @@ Hoặc sao chép lại thư mục sau `git pull`.
 ### Gỡ cài đặt
 
 ```bash
-npx skills remove i-have-adhd
+npx skills remove i-have-adhd-plan
 ```
 
-Hoặc xóa thư mục `i-have-adhd` khỏi thư mục skills nơi nó được cài.
+Hoặc xóa thư mục `i-have-adhd-plan` khỏi thư mục skills nơi nó được cài.
 
 ### Lưu ý về kích hoạt
 
@@ -299,17 +299,17 @@ Ngoại lệ: giải thích đầy đủ khi được yêu cầu. Xác nhận tr
 ### Cài đặt
 
 ```bash
-hermes skills install ayghri/i-have-adhd/skills/i-have-adhd
+hermes skills install BnJam/i-have-adhd-plan/skills/i-have-adhd-plan
 ```
 
-Gõ `/i-have-adhd`. The skill installs into `~/.hermes/skills/` and is exposed as a slash command at the next session start.
+Gõ `/i-have-adhd-plan`. The skill installs into `~/.hermes/skills/` and is exposed as a slash command at the next session start.
 
 Muốn xem trước? Thêm repo này làm nguồn skill (một "tap"), rồi tìm kiếm và cài đặt:
 
 ```bash
-hermes skills tap add ayghri/i-have-adhd
+hermes skills tap add BnJam/i-have-adhd-plan
 hermes skills search adhd
-hermes skills install ayghri/i-have-adhd/skills/i-have-adhd
+hermes skills install BnJam/i-have-adhd-plan/skills/i-have-adhd-plan
 ```
 
 ### Xác minh
@@ -321,16 +321,16 @@ hermes skills list
 ### Cập nhật
 
 ```bash
-hermes skills update i-have-adhd
+hermes skills update i-have-adhd-plan
 ```
 
 ### Gỡ cài đặt
 
 ```bash
-hermes skills uninstall i-have-adhd
+hermes skills uninstall i-have-adhd-plan
 ```
 
-Hoặc xóa cả tap bằng `hermes skills tap remove ayghri/i-have-adhd`.
+Hoặc xóa cả tap bằng `hermes skills tap remove BnJam/i-have-adhd-plan`.
 
 ### Luôn bật (không bắt buộc)
 
@@ -366,18 +366,18 @@ Hãy bắt đầu một phiên Kimi Code, rồi:
 
 1. Chạy `/plugins`.
 2. Chọn **Custom**.
-3. Dán `https://github.com/ayghri/i-have-adhd` rồi nhấn Enter.
+3. Dán `https://github.com/BnJam/i-have-adhd-plan` rồi nhấn Enter.
 4. Chọn **Trust and install**.
 
-Dùng lệnh slash `/skill:i-have-adhd` để gọi skill một cách rõ ràng.
+Dùng lệnh slash `/skill:i-have-adhd-plan` để gọi skill một cách rõ ràng.
 
 ### Cập nhật
 
-Trong phiên Kimi Code, chạy `/plugins`, đưa con trỏ đến **I Have ADHD**, rồi nhấn `R`.
+Trong phiên Kimi Code, chạy `/plugins`, đưa con trỏ đến **I Have ADHD Plan**, rồi nhấn `R`.
 
 ### Gỡ cài đặt
 
-Trong phiên Kimi Code, chạy `/plugins`, đưa con trỏ đến **I Have ADHD**, rồi nhấn `D`.
+Trong phiên Kimi Code, chạy `/plugins`, đưa con trỏ đến **I Have ADHD Plan**, rồi nhấn `D`.
 
 </details>
 
@@ -390,15 +390,15 @@ Pi triển khai chuẩn Agent Skills nên tải trực tiếp cùng một `SKILL
 ### Cài đặt
 
 ```bash
-npx skills add ayghri/i-have-adhd -a pi -y
+npx skills add BnJam/i-have-adhd-plan -a pi -y
 ```
 
 Muốn dùng hệ thống tệp? Pi tìm skill trong `~/.pi/agent/skills/` và `~/.agents/skills/` (toàn cục), cùng `.pi/skills/` và `.agents/skills/` (dự án):
 
 ```bash
-git clone https://github.com/ayghri/i-have-adhd
+git clone https://github.com/BnJam/i-have-adhd-plan
 mkdir -p ~/.pi/agent/skills
-cp -R i-have-adhd/skills/i-have-adhd ~/.pi/agent/skills/
+cp -R i-have-adhd-plan/skills/i-have-adhd-plan ~/.pi/agent/skills/
 ```
 
 Bật lệnh gạch chéo cho skill trong `settings.json` của Pi:
@@ -407,7 +407,7 @@ Bật lệnh gạch chéo cho skill trong `settings.json` của Pi:
 { "enableSkillCommands": true }
 ```
 
-Bắt đầu phiên mới và gõ `/skill:i-have-adhd`.
+Bắt đầu phiên mới và gõ `/skill:i-have-adhd-plan`.
 
 ### Xác minh
 
@@ -415,12 +415,12 @@ Bắt đầu phiên mới và gõ `/skill:i-have-adhd`.
 npx skills list
 ```
 
-Hoặc gõ `/skill:` trong một phiên và xác nhận `i-have-adhd` có trong danh sách.
+Hoặc gõ `/skill:` trong một phiên và xác nhận `i-have-adhd-plan` có trong danh sách.
 
 ### Cập nhật
 
 ```bash
-npx skills update i-have-adhd
+npx skills update i-have-adhd-plan
 ```
 
 Hoặc sao chép lại thư mục sau `git pull`.
@@ -428,10 +428,10 @@ Hoặc sao chép lại thư mục sau `git pull`.
 ### Gỡ cài đặt
 
 ```bash
-npx skills remove i-have-adhd
+npx skills remove i-have-adhd-plan
 ```
 
-Hoặc xóa `~/.pi/agent/skills/i-have-adhd`.
+Hoặc xóa `~/.pi/agent/skills/i-have-adhd-plan`.
 
 ### Luôn bật (không bắt buộc)
 
@@ -465,12 +465,12 @@ Ngoại lệ: giải thích đầy đủ khi được yêu cầu. Xác nhận tr
 ### Cài đặt
 
 ```bash
-qwen extensions install ayghri/i-have-adhd
+qwen extensions install BnJam/i-have-adhd-plan
 ```
 
 Qwen Code hỗ trợ dạng viết tắt GitHub và cài kho lưu trữ này dưới dạng extension gốc. Extension sẽ phát hiện skill trong `skills/`.
 
-Gõ `/i-have-adhd` để gọi skill một cách rõ ràng. Chỉ cài extension sẽ không thay đổi đầu ra cho đến khi skill được gọi.
+Gõ `/i-have-adhd-plan` để gọi skill một cách rõ ràng. Chỉ cài extension sẽ không thay đổi đầu ra cho đến khi skill được gọi.
 
 ### Xác minh
 
@@ -484,18 +484,18 @@ Sau đó, bắt đầu một phiên Qwen Code mới và chạy:
 /skills
 ```
 
-Xác nhận `i-have-adhd` xuất hiện trong danh sách.
+Xác nhận `i-have-adhd-plan` xuất hiện trong danh sách.
 
 ### Cập nhật
 
 ```bash
-qwen extensions update i-have-adhd
+qwen extensions update i-have-adhd-plan
 ```
 
 ### Gỡ cài đặt
 
 ```bash
-qwen extensions uninstall i-have-adhd
+qwen extensions uninstall i-have-adhd-plan
 ```
 
 </details>
@@ -510,21 +510,21 @@ Agent của Zed đọc Agent Skills trực tiếp: cùng một `SKILL.md`, khôn
 Trong Agent Panel, mở trình quản lý Skills, chọn **Create skill from URL** (cũng có trong bảng lệnh dưới tên `agent: create skill from url`), rồi dán:
 
 ```
-https://github.com/ayghri/i-have-adhd/blob/main/skills/i-have-adhd/SKILL.md
+https://github.com/BnJam/i-have-adhd-plan/blob/main/skills/i-have-adhd-plan/SKILL.md
 ```
 
-Lưu ở phạm vi **User** cho mọi dự án hoặc **Project** cho một dự án. Sau đó gõ `/i-have-adhd` trong Agent Panel.
+Lưu ở phạm vi **User** cho mọi dự án hoặc **Project** cho một dự án. Sau đó gõ `/i-have-adhd-plan` trong Agent Panel.
 
 Muốn dùng hệ thống tệp? Clone repo và đặt thư mục skill vào thư mục skills của người dùng:
 
 ```bash
-git clone https://github.com/ayghri/i-have-adhd
-cp -R i-have-adhd/skills/i-have-adhd ~/.config/zed/skills/
+git clone https://github.com/BnJam/i-have-adhd-plan
+cp -R i-have-adhd-plan/skills/i-have-adhd-plan ~/.config/zed/skills/
 ```
 
 ### Xác minh
 
-Mở trình quản lý Skills trong Agent Panel và xác nhận `i-have-adhd` có trong danh sách. Hoặc gõ `/` và xác nhận nó xuất hiện.
+Mở trình quản lý Skills trong Agent Panel và xác nhận `i-have-adhd-plan` có trong danh sách. Hoặc gõ `/` và xác nhận nó xuất hiện.
 
 ### Cập nhật
 
@@ -532,7 +532,7 @@ Nhập lại từ cùng URL (ghi đè), hoặc sao chép lại thư mục sau `g
 
 ### Gỡ cài đặt
 
-Xóa `i-have-adhd` khỏi trình quản lý Skills, hoặc xóa `~/.config/zed/skills/i-have-adhd`.
+Xóa `i-have-adhd-plan` khỏi trình quản lý Skills, hoặc xóa `~/.config/zed/skills/i-have-adhd-plan`.
 
 ### Luôn bật (không bắt buộc)
 
@@ -567,20 +567,20 @@ Hoạt động với mọi môi trường đọc Agent Skills. Thay `-a <agent>`
 ### Cài đặt
 
 ```bash
-npx skills add ayghri/i-have-adhd                  # this workspace
-npx skills add ayghri/i-have-adhd -g               # mọi dự án
-npx skills add ayghri/i-have-adhd -a cursor -y     # one agent only
-npx skills add ayghri/i-have-adhd -a opencode -y
+npx skills add BnJam/i-have-adhd-plan                  # this workspace
+npx skills add BnJam/i-have-adhd-plan -g               # mọi dự án
+npx skills add BnJam/i-have-adhd-plan -a cursor -y     # one agent only
+npx skills add BnJam/i-have-adhd-plan -a opencode -y
 ```
 
-Mở cuộc chat agent mới và gõ `/i-have-adhd`.
+Mở cuộc chat agent mới và gõ `/i-have-adhd-plan`.
 
 Nếu không dùng CLI, sao chép thư mục skill vào đường dẫn mà agent quét:
 
 ```bash
-git clone https://github.com/ayghri/i-have-adhd
+git clone https://github.com/BnJam/i-have-adhd-plan
 mkdir -p ~/.cursor/skills     # Cursor. Dùng .agents/skills cho OpenCode hoặc đường dẫn riêng của agent
-cp -R i-have-adhd/skills/i-have-adhd ~/.cursor/skills/
+cp -R i-have-adhd-plan/skills/i-have-adhd-plan ~/.cursor/skills/
 ```
 
 ### Xác minh
@@ -593,15 +593,15 @@ npx skills ls -g    # nếu đã cài toàn cục
 ### Cập nhật
 
 ```bash
-npx skills update i-have-adhd
+npx skills update i-have-adhd-plan
 npx skills update -g    # nếu đã cài toàn cục
 ```
 
 ### Gỡ cài đặt
 
 ```bash
-npx skills remove i-have-adhd
-npx skills remove i-have-adhd -g    # nếu đã cài toàn cục
+npx skills remove i-have-adhd-plan
+npx skills remove i-have-adhd-plan -g    # nếu đã cài toàn cục
 ```
 
 ### Luôn bật (không bắt buộc)
@@ -632,31 +632,29 @@ Ngoại lệ: giải thích đầy đủ khi được yêu cầu. Xác nhận tr
 ## Cơ chế kích hoạt
 
 1. **Đã cài nhưng chưa gọi.** Trong Claude Code, Qwen Code và Codex, không có gì xảy ra cho đến khi bạn gọi skill một cách rõ ràng. Claude Code và Qwen Code tuân theo `disable-model-invocation: true` trong `SKILL.md`; Codex tuân theo `policy.allow_implicit_invocation: false` trong `agents/openai.yaml`. Các môi trường khác có thể tải mô tả của từng skill khi khởi động và tự kích hoạt.
-2. **Bạn gọi skill một cách rõ ràng.** Gõ `/i-have-adhd` trong Claude Code hoặc Qwen Code, hoặc `$i-have-adhd` trong Codex. Quy tắc bật trong phiên đó. "stop adhd mode" hoặc "normal mode" sẽ tắt chúng.
-3. **Bạn tạo `~/.claude/.i-have-adhd-always`** (Claude Code). Hook `SessionStart` tải toàn bộ quy tắc từ tin nhắn đầu tiên trong mọi phiên.
+2. **Bạn gọi skill một cách rõ ràng.** Gõ `/i-have-adhd-plan` trong Claude Code hoặc Qwen Code, hoặc `$i-have-adhd-plan` trong Codex. Quy tắc bật trong phiên đó. "stop adhd mode" hoặc "normal mode" sẽ tắt chúng.
+3. **Bạn tạo `~/.claude/.i-have-adhd-plan-always`** (Claude Code). Hook `SessionStart` tải toàn bộ quy tắc từ tin nhắn đầu tiên trong mọi phiên.
 4. **Bạn thêm đoạn luôn bật ở trên** (các môi trường khác). Điều này giữ quy tắc cốt lõi trong ngữ cảnh lâu dài của agent.
 
 Trong Claude Code, Qwen Code và Codex không có trạng thái trung gian: nếu bạn chưa bật thì nó đang tắt.
 
 ## Khắc phục sự cố
 
-**`/i-have-adhd` không có trong tự động hoàn thành.** Khởi động lại agent. Chỉ mục plugin được đọc khi khởi động.
+**`/i-have-adhd-plan` không có trong tự động hoàn thành.** Khởi động lại agent. Chỉ mục plugin được đọc khi khởi động.
 
-**Cờ luôn bật không có tác dụng.** Cập nhật plugin (`claude plugin marketplace update i-have-adhd`) và khởi động lại. Hook được đọc khi khởi động, và cờ cần phiên bản plugin có `hooks/hooks.json`.
+**Cờ luôn bật không có tác dụng.** Cập nhật plugin (`claude plugin marketplace update i-have-adhd-plan`) và khởi động lại. Hook được đọc khi khởi động, và cờ cần phiên bản plugin có `hooks/hooks.json`.
 
 **`claude plugin marketplace add` thất bại.** Dùng dạng `owner/repo`. Đường dẫn cục bộ phải trỏ đến thư mục gốc repo, không phải `.claude-plugin/`.
 
-**Đã cài nhưng phản hồi vẫn có lời mở đầu.** Mở phiên mới. Nếu vẫn lệch, hãy làm chặt hơn cách diễn đạt trong `skills/i-have-adhd/SKILL.md`.
+**Đã cài nhưng phản hồi vẫn có lời mở đầu.** Mở phiên mới. Nếu vẫn lệch, hãy làm chặt hơn cách diễn đạt trong `skills/i-have-adhd-plan/SKILL.md`.
 
-**Muốn quy tắc khác.** Fork repo, sửa `skills/i-have-adhd/SKILL.md`, rồi chuyển sang bản của bạn:
+**Muốn quy tắc khác.** Fork repo, sửa `skills/i-have-adhd-plan/SKILL.md`, rồi chuyển sang bản của bạn:
 
 ```bash
-claude plugin uninstall i-have-adhd            # gỡ bản upstream trước:
-claude plugin marketplace remove i-have-adhd   # fork và upstream dùng cùng tên
-claude plugin marketplace add <your-username>/i-have-adhd
-claude plugin install i-have-adhd@i-have-adhd
+claude plugin marketplace add <your-username>/i-have-adhd-plan
+claude plugin install i-have-adhd-plan@i-have-adhd-plan
 ```
 
-Khởi động lại rồi gọi `/i-have-adhd` lần nữa.
+Khởi động lại rồi gọi `/i-have-adhd-plan` lần nữa.
 
 **Thiếu skill sau `npx skills add`.** Mở cuộc chat agent mới. Skill được lập chỉ mục khi bắt đầu phiên. Xác nhận thư mục nằm ở nơi agent quét (`~/.cursor/skills/` cho Cursor, `.agents/skills/` cho OpenCode) và `name` trong frontmatter khớp tên thư mục.

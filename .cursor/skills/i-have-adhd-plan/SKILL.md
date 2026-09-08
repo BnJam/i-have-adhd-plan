@@ -1,6 +1,6 @@
 ---
-name: i-have-adhd
-description: 'Shape output for a reader with ADHD, including compact, executable plans: lead with the next action, number multi-step work, restate state across turns, suppress tangents, give specific time estimates, and make wins visible. Invoke with /i-have-adhd; stays on until "stop adhd mode".'
+name: i-have-adhd-plan
+description: 'Shape output for a reader with ADHD, including compact, executable plans: lead with the next action, number multi-step work, restate state across turns, suppress tangents, give specific time estimates, and make wins visible. Invoke with /i-have-adhd-plan; stays on until "stop adhd mode".'
 disable-model-invocation: true
 license: MIT
 metadata:
@@ -8,7 +8,7 @@ metadata:
   category: "productivity"
 ---
 
-# i-have-adhd
+# i-have-adhd-plan
 
 The reader has ADHD. Output is not just brief. It is shaped so an ADHD brain can act on it.
 

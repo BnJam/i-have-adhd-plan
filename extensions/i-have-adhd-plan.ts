@@ -16,19 +16,19 @@ const SKILL_PATH = join(
   EXTENSION_DIR,
   "..",
   "skills",
-  "i-have-adhd",
+  "i-have-adhd-plan",
   "SKILL.md",
 );
-const STATE_ENTRY_TYPE = "i-have-adhd-state";
-const RULES_MESSAGE_TYPE = "i-have-adhd-rules";
-const DISABLED_MESSAGE_TYPE = "i-have-adhd-disabled";
-const STATUS_KEY = "i-have-adhd";
+const STATE_ENTRY_TYPE = "i-have-adhd-plan-state";
+const RULES_MESSAGE_TYPE = "i-have-adhd-plan-rules";
+const DISABLED_MESSAGE_TYPE = "i-have-adhd-plan-disabled";
+const STATUS_KEY = "i-have-adhd-plan";
 const DISABLE_CONFIRMATION = "ADHD mode disabled.";
 const STOP_PHRASES = new Set(["stop adhd mode", "normal mode"]);
 const RULES_HEADER =
   'ADHD MODE ACTIVE. The ruleset below applies to every response until turned off. "stop adhd mode" or "normal mode" turns it off for this session.';
 const DISABLED_NOTICE =
-  "ADHD MODE OFF. Ignore the i-have-adhd ruleset injected earlier in this conversation and return to your default response style.";
+  "ADHD MODE OFF. Ignore the i-have-adhd-plan ruleset injected earlier in this conversation and return to your default response style.";
 
 type AdhdModeState = {
   enabled: boolean;
@@ -42,7 +42,7 @@ type AdhdConfig = {
 function loadConfig(): AdhdConfig {
   try {
     return JSON.parse(
-      readFileSync(join(getAgentDir(), "i-have-adhd.json"), "utf8"),
+      readFileSync(join(getAgentDir(), "i-have-adhd-plan.json"), "utf8"),
     );
   } catch {
     return {};
@@ -66,13 +66,13 @@ function loadRules(): string {
   } catch (error) {
     const reason = error instanceof Error ? error.message : String(error);
     throw new Error(
-      `Unable to load i-have-adhd rules from ${SKILL_PATH}: ${reason}`,
+      `Unable to load i-have-adhd-plan rules from ${SKILL_PATH}: ${reason}`,
     );
   }
 
   const rules = stripFrontmatter(content);
   if (!rules) {
-    throw new Error(`The i-have-adhd rules file is empty: ${SKILL_PATH}`);
+    throw new Error(`The i-have-adhd-plan rules file is empty: ${SKILL_PATH}`);
   }
 
   return rules;
@@ -112,7 +112,7 @@ function rulesAreInContext(ctx: ExtensionContext): boolean {
 
 export default function iHaveAdhdExtension(pi: ExtensionAPI) {
   const rules = loadRules();
-  const alwaysOnFlag = join(getAgentDir(), ".i-have-adhd-always");
+  const alwaysOnFlag = join(getAgentDir(), ".i-have-adhd-plan-always");
   const config = loadConfig();
   let enabled = false;
 
@@ -123,7 +123,7 @@ export default function iHaveAdhdExtension(pi: ExtensionAPI) {
     }
 
     const dot = ctx.ui.theme.fg("success", "●");
-    const label = ctx.ui.theme.fg("accent", "ADHD ON");
+    const label = ctx.ui.theme.fg("accent", "ADHD PLAN ON");
     ctx.ui.setStatus(STATUS_KEY, `${dot} ${label}`);
   };
 
@@ -161,7 +161,7 @@ export default function iHaveAdhdExtension(pi: ExtensionAPI) {
   const restoreState = (ctx: ExtensionContext): void => {
     const savedState = getSavedState(ctx);
     const enabledByDefault =
-      pi.getFlag("adhd") === true ||
+      pi.getFlag("adhd-plan") === true ||
       config.alwaysOn === true ||
       existsSync(alwaysOnFlag);
 
@@ -178,13 +178,13 @@ export default function iHaveAdhdExtension(pi: ExtensionAPI) {
     ctx.ui.notify(`ADHD mode ${enabled ? "enabled" : "disabled"}`, "info");
   };
 
-  pi.registerFlag("adhd", {
+  pi.registerFlag("adhd-plan", {
     description: "Start with ADHD-friendly output enabled",
     type: "boolean",
     default: false,
   });
 
-  pi.registerCommand("i-have-adhd", {
+  pi.registerCommand("i-have-adhd-plan", {
     description: "Toggle ADHD-friendly output for this session",
     handler: async (args, ctx) => {
       const argument = args.trim().toLowerCase();
@@ -204,7 +204,7 @@ export default function iHaveAdhdExtension(pi: ExtensionAPI) {
         return;
       }
 
-      ctx.ui.notify("Usage: /i-have-adhd [on|off]", "warning");
+      ctx.ui.notify("Usage: /i-have-adhd-plan [on|off]", "warning");
     },
   });
 
@@ -213,7 +213,7 @@ export default function iHaveAdhdExtension(pi: ExtensionAPI) {
 
     // Keep the built-in skill command working as an alias without letting Pi
     // expand a second copy of the same rules into the conversation.
-    if (input === "/skill:i-have-adhd") {
+    if (input === "/skill:i-have-adhd-plan") {
       setEnabled(true, ctx);
       return { action: "handled" };
     }

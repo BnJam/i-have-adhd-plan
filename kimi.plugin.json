@@ -1,12 +1,12 @@
 {
-  "name": "i-have-adhd",
+  "name": "i-have-adhd-plan",
   "version": "0.2.0",
   "description": "Shape output for a reader with ADHD: lead with the next action, use compact executable plans, number multi-step work, restate state across turns, suppress tangents, give specific time estimates, and make wins visible.",
   "license": "MIT",
-  "homepage": "https://github.com/ayghri/i-have-adhd",
+  "homepage": "https://github.com/BnJam/i-have-adhd-plan",
   "skills": "./skills/",
   "interface": {
-    "displayName": "I Have ADHD",
+    "displayName": "I Have ADHD Plan",
     "shortDescription": "ADHD-friendly output shaping for Kimi Code CLI"
   }
 }

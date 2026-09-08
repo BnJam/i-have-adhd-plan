@@ -1,6 +1,6 @@
 # SessionStart hook fallback for Windows PowerShell. Injects the full
-# i-have-adhd ruleset when the user has opted in by creating
-# $CLAUDE_CONFIG_DIR/.i-have-adhd-always (default ~/.claude).
+# i-have-adhd-plan ruleset when the user has opted in by creating
+# $CLAUDE_CONFIG_DIR/.i-have-adhd-plan-always (default ~/.claude).
 # Never blocks session start: any failure exits 0.
 
 try {
@@ -9,14 +9,14 @@ try {
   } else {
     Join-Path ([Environment]::GetFolderPath("UserProfile")) ".claude"
   }
-  $flagPath = Join-Path $claudeDir ".i-have-adhd-always"
+  $flagPath = Join-Path $claudeDir ".i-have-adhd-plan-always"
 
   if (-not (Test-Path -LiteralPath $flagPath -PathType Leaf)) {
     exit 0
   }
 
   $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
-  $skillPath = Join-Path $scriptDir "../skills/i-have-adhd/SKILL.md"
+  $skillPath = Join-Path $scriptDir "../skills/i-have-adhd-plan/SKILL.md"
   if (-not (Test-Path -LiteralPath $skillPath -PathType Leaf)) {
     exit 0
   }

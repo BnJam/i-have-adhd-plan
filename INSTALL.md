@@ -6,7 +6,7 @@
 ### Install
 
 ```bash
-agy plugin install https://github.com/ayghri/i-have-adhd
+agy plugin install https://github.com/BnJam/i-have-adhd-plan
 ```
 
 ### Verify
@@ -18,17 +18,17 @@ agy plugin list
 ### Update
 
 ```bash
-agy plugin uninstall i-have-adhd
-agy plugin install https://github.com/ayghri/i-have-adhd
+agy plugin uninstall i-have-adhd-plan
+agy plugin install https://github.com/BnJam/i-have-adhd-plan
 ```
 
 ### Uninstall
 
 ```bash
-agy plugin uninstall i-have-adhd
+agy plugin uninstall i-have-adhd-plan
 ```
 
-Or keep it installed and turn it off: `agy plugin disable i-have-adhd`.
+Or keep it installed and turn it off: `agy plugin disable i-have-adhd-plan`.
 
 ### Always-on (optional)
 
@@ -61,11 +61,11 @@ Exceptions: explain fully when asked to explain. Confirm before destructive acti
 ### Install
 
 ```bash
-claude plugin marketplace add ayghri/i-have-adhd
-claude plugin install i-have-adhd@i-have-adhd
+claude plugin marketplace add BnJam/i-have-adhd-plan
+claude plugin install i-have-adhd-plan@i-have-adhd-plan
 ```
 
-Type `/i-have-adhd`.
+Type `/i-have-adhd-plan`.
 
 ### Verify
 
@@ -76,36 +76,36 @@ claude plugin list
 ### Update
 
 ```bash
-claude plugin marketplace update i-have-adhd
+claude plugin marketplace update i-have-adhd-plan
 ```
 
 ### Uninstall
 
 ```bash
-claude plugin uninstall i-have-adhd
-claude plugin marketplace remove i-have-adhd
+claude plugin uninstall i-have-adhd-plan
+claude plugin marketplace remove i-have-adhd-plan
 ```
 
-Or keep it installed and turn it off: `claude plugin disable i-have-adhd`.
+Or keep it installed and turn it off: `claude plugin disable i-have-adhd-plan`.
 
 ### Always-on (optional)
 
-A `SessionStart` hook loads the full ruleset at the start of every session, no `/i-have-adhd` needed:
+A `SessionStart` hook loads the full ruleset at the start of every session, no `/i-have-adhd-plan` needed:
 
 ```bash
-touch ~/.claude/.i-have-adhd-always
+touch ~/.claude/.i-have-adhd-plan-always
 ```
 
 If you use a custom Claude configuration directory, create the flag there instead:
 
 ```bash
-touch "$CLAUDE_CONFIG_DIR/.i-have-adhd-always"
+touch "$CLAUDE_CONFIG_DIR/.i-have-adhd-plan-always"
 ```
 
 Back to on-demand:
 
 ```bash
-rm ~/.claude/.i-have-adhd-always
+rm ~/.claude/.i-have-adhd-plan-always
 ```
 
 The hook only fires when the flag file exists, so installing the plugin changes nothing by itself. "stop adhd mode" still turns it off for the current session.
@@ -119,11 +119,11 @@ The hook only fires when the flag file exists, so installing the plugin changes 
 ### Install
 
 ```bash
-codex plugin marketplace add ayghri/i-have-adhd --ref main
-codex plugin add i-have-adhd@i-have-adhd
+codex plugin marketplace add BnJam/i-have-adhd-plan --ref main
+codex plugin add i-have-adhd-plan@i-have-adhd-plan
 ```
 
-Invoke the skill explicitly by typing `$i-have-adhd`. Codex will not activate
+Invoke the skill explicitly by typing `$i-have-adhd-plan`. Codex will not activate
 it automatically.
 
 ### Verify
@@ -135,16 +135,16 @@ codex plugin list
 ### Update
 
 ```bash
-codex plugin marketplace upgrade i-have-adhd
-codex plugin remove i-have-adhd
-codex plugin add i-have-adhd@i-have-adhd
+codex plugin marketplace upgrade i-have-adhd-plan
+codex plugin remove i-have-adhd-plan
+codex plugin add i-have-adhd-plan@i-have-adhd-plan
 ```
 
 ### Uninstall
 
 ```bash
-codex plugin remove i-have-adhd
-codex plugin marketplace remove i-have-adhd
+codex plugin remove i-have-adhd-plan
+codex plugin marketplace remove i-have-adhd-plan
 ```
 
 ### Always-on (optional)
@@ -181,16 +181,16 @@ Gemini CLI has no plugin marketplace, so there are two native routes: a **custom
 
 ```bash
 mkdir -p ~/.gemini/commands
-curl -fsSL https://raw.githubusercontent.com/ayghri/i-have-adhd/main/skills/i-have-adhd/agents/gemini.toml \
-  -o ~/.gemini/commands/i-have-adhd.toml
+curl -fsSL https://raw.githubusercontent.com/BnJam/i-have-adhd-plan/main/skills/i-have-adhd-plan/agents/gemini.toml \
+  -o ~/.gemini/commands/i-have-adhd-plan.toml
 ```
 
-Start a new session, type `/i-have-adhd`. It stays on for that session.
+Start a new session, type `/i-have-adhd-plan`. It stays on for that session.
 
 ### Install (extension, always-on)
 
 ```bash
-gemini extensions install https://github.com/ayghri/i-have-adhd
+gemini extensions install https://github.com/BnJam/i-have-adhd-plan
 ```
 
 The extension loads `GEMINI.md`, which imports the full skill, so the rules apply from message one. `git` must be installed.
@@ -199,23 +199,23 @@ The extension loads `GEMINI.md`, which imports the full skill, so the rules appl
 
 ```bash
 gemini extensions list          # extension route
-ls ~/.gemini/commands           # command route: i-have-adhd.toml present
+ls ~/.gemini/commands           # command route: i-have-adhd-plan.toml present
 ```
 
-Or type `/` in a session and confirm `i-have-adhd` is listed.
+Or type `/` in a session and confirm `i-have-adhd-plan` is listed.
 
 ### Update
 
 ```bash
-gemini extensions update i-have-adhd    # extension route
+gemini extensions update i-have-adhd-plan    # extension route
 # command route: re-run the curl above
 ```
 
 ### Uninstall
 
 ```bash
-gemini extensions uninstall i-have-adhd    # extension route
-rm ~/.gemini/commands/i-have-adhd.toml     # command route
+gemini extensions uninstall i-have-adhd-plan    # extension route
+rm ~/.gemini/commands/i-have-adhd-plan.toml     # command route
 ```
 
 </details>
@@ -228,21 +228,21 @@ Copilot reads Agent Skills natively: the same `SKILL.md`, no conversion. It scan
 ### Install
 
 ```bash
-npx skills add ayghri/i-have-adhd -a github-copilot        # this project
-npx skills add ayghri/i-have-adhd -a github-copilot -g     # all projects
+npx skills add BnJam/i-have-adhd-plan -a github-copilot        # this project
+npx skills add BnJam/i-have-adhd-plan -a github-copilot -g     # all projects
 ```
 
 Without the CLI, copy the skill folder into any directory Copilot scans:
 
 ```bash
-git clone https://github.com/ayghri/i-have-adhd
+git clone https://github.com/BnJam/i-have-adhd-plan
 mkdir -p ~/.copilot/skills
-cp -R i-have-adhd/skills/i-have-adhd ~/.copilot/skills/
+cp -R i-have-adhd-plan/skills/i-have-adhd-plan ~/.copilot/skills/
 ```
 
 ### Verify
 
-Type `/` in the chat input and confirm `i-have-adhd` appears. Or:
+Type `/` in the chat input and confirm `i-have-adhd-plan` appears. Or:
 
 ```bash
 npx skills list
@@ -252,7 +252,7 @@ npx skills ls -g    # if installed globally
 ### Update
 
 ```bash
-npx skills update i-have-adhd
+npx skills update i-have-adhd-plan
 ```
 
 Or re-copy the folder after `git pull`.
@@ -260,10 +260,10 @@ Or re-copy the folder after `git pull`.
 ### Uninstall
 
 ```bash
-npx skills remove i-have-adhd
+npx skills remove i-have-adhd-plan
 ```
 
-Or delete the `i-have-adhd` folder from the skills directory it landed in.
+Or delete the `i-have-adhd-plan` folder from the skills directory it landed in.
 
 ### Activation note
 
@@ -301,17 +301,17 @@ Exceptions: explain fully when asked to explain. Confirm before destructive acti
 ### Install
 
 ```bash
-hermes skills install ayghri/i-have-adhd/skills/i-have-adhd
+hermes skills install BnJam/i-have-adhd-plan/skills/i-have-adhd-plan
 ```
 
-Type `/i-have-adhd`. The skill installs into `~/.hermes/skills/` and is exposed as a slash command at the next session start.
+Type `/i-have-adhd-plan`. The skill installs into `~/.hermes/skills/` and is exposed as a slash command at the next session start.
 
 Prefer to browse first? Add this repo as a skill source (a "tap"), then search and install:
 
 ```bash
-hermes skills tap add ayghri/i-have-adhd
+hermes skills tap add BnJam/i-have-adhd-plan
 hermes skills search adhd
-hermes skills install ayghri/i-have-adhd/skills/i-have-adhd
+hermes skills install BnJam/i-have-adhd-plan/skills/i-have-adhd-plan
 ```
 
 ### Verify
@@ -323,16 +323,16 @@ hermes skills list
 ### Update
 
 ```bash
-hermes skills update i-have-adhd
+hermes skills update i-have-adhd-plan
 ```
 
 ### Uninstall
 
 ```bash
-hermes skills uninstall i-have-adhd
+hermes skills uninstall i-have-adhd-plan
 ```
 
-Or remove the tap too: `hermes skills tap remove ayghri/i-have-adhd`.
+Or remove the tap too: `hermes skills tap remove BnJam/i-have-adhd-plan`.
 
 ### Always-on (optional)
 
@@ -368,18 +368,18 @@ Start a Kimi Code session, then:
 
 1. Run `/plugins`.
 2. Choose **Custom**.
-3. Paste `https://github.com/ayghri/i-have-adhd` and press `Enter`.
+3. Paste `https://github.com/BnJam/i-have-adhd-plan` and press `Enter`.
 4. Choose **Trust and install**.
 
-Use slash command `/skill:i-have-adhd` to invoke the skill explicitly.
+Use slash command `/skill:i-have-adhd-plan` to invoke the skill explicitly.
 
 ### Update
 
-`/plugins` in Kimi Code session, cursor to **I Have ADHD**, press `R`.
+`/plugins` in Kimi Code session, cursor to **I Have ADHD Plan**, press `R`.
 
 ### Uninstall
 
-`/plugins` in Kimi Code session, cursor to **I Have ADHD**, press `D`.
+`/plugins` in Kimi Code session, cursor to **I Have ADHD Plan**, press `D`.
 
 
 </details>
@@ -387,20 +387,20 @@ Use slash command `/skill:i-have-adhd` to invoke the skill explicitly.
 <details>
 <summary><strong>OpenCode</strong></summary>
 
-OpenCode loads this repository as a server plugin: `.opencode/plugins/i-have-adhd.mjs` registers the `skills/` entry point and the `/i-have-adhd` command, and injects the ruleset when always-on is enabled. OpenCode also reads `skills/` natively, so the skill still works even without the plugin — the plugin adds the `/i-have-adhd` command and the always-on flag.
+OpenCode loads this repository as a server plugin: `.opencode/plugins/i-have-adhd-plan.mjs` registers the `skills/` entry point and the `/i-have-adhd-plan` command, and injects the ruleset when always-on is enabled. OpenCode also reads `skills/` natively, so the skill still works even without the plugin — the plugin adds the `/i-have-adhd-plan` command and the always-on flag.
 
 ### Install
 
 Clone the repo and point OpenCode at the plugin. An absolute path shares one checkout across every project:
 
 ```bash
-git clone https://github.com/ayghri/i-have-adhd ~/.config/opencode/vendor/i-have-adhd
+git clone https://github.com/BnJam/i-have-adhd-plan ~/.config/opencode/vendor/i-have-adhd-plan
 ```
 
 Add to your `opencode.json` (global: `~/.config/opencode/opencode.json`):
 
 ```json
-{ "plugin": ["/absolute/path/to/i-have-adhd/.opencode/plugins/i-have-adhd.mjs"] }
+{ "plugin": ["/absolute/path/to/i-have-adhd-plan/.opencode/plugins/i-have-adhd-plan.mjs"] }
 ```
 
 Or run OpenCode from the checkout — it ships a root `opencode.json` with the plugin already wired up.
@@ -408,19 +408,19 @@ Or run OpenCode from the checkout — it ships a root `opencode.json` with the p
 Start a new session and turn on ADHD-friendly output for the session:
 
 ```text
-/i-have-adhd
+/i-have-adhd-plan
 ```
 
 Rules stay on until `stop adhd mode` or `normal mode`.
 
 ### Verify
 
-Start OpenCode, type `/`, and confirm `i-have-adhd` appears in the command list.
+Start OpenCode, type `/`, and confirm `i-have-adhd-plan` appears in the command list.
 
 ### Update
 
 ```bash
-git -C ~/.config/opencode/vendor/i-have-adhd pull
+git -C ~/.config/opencode/vendor/i-have-adhd-plan pull
 ```
 
 ### Uninstall
@@ -430,13 +430,13 @@ Remove the `plugin` entry from `opencode.json`.
 ### Always-on (optional)
 
 ```bash
-touch ~/.config/opencode/.i-have-adhd-always
+touch ~/.config/opencode/.i-have-adhd-plan-always
 ```
 
 While the flag exists, the plugin appends the full ruleset to the system prompt every turn — the OpenCode equivalent of the Claude Code `SessionStart` hook. `stop adhd mode` or `normal mode` disables it for the current session; delete the flag to turn always-on off for good:
 
 ```bash
-rm ~/.config/opencode/.i-have-adhd-always
+rm ~/.config/opencode/.i-have-adhd-plan-always
 ```
 
 </details>
@@ -450,20 +450,20 @@ Pi discovers this repository as a native package: `extensions/` provides the ses
 ### Install
 
 ```bash
-pi install https://github.com/ayghri/i-have-adhd
+pi install https://github.com/BnJam/i-have-adhd-plan
 ```
 
 Start a new Pi session. Toggle ADHD-friendly output for the current session:
 
 ```text
-/i-have-adhd
+/i-have-adhd-plan
 ```
 
-The footer shows `● ADHD ON` while the mode is active. Run the command again to turn it off, or be explicit:
+The footer shows `● ADHD PLAN ON` while the mode is active. Run the command again to turn it off, or be explicit:
 
 ```text
-/i-have-adhd on
-/i-have-adhd off
+/i-have-adhd-plan on
+/i-have-adhd-plan off
 stop adhd mode
 ```
 
@@ -472,13 +472,13 @@ Like the Claude Code hook, the extension adds the ruleset to the conversation on
 The existing Agent Skills command remains available as an alias:
 
 ```text
-/skill:i-have-adhd
+/skill:i-have-adhd-plan
 ```
 
 Start a new Pi session with the mode enabled by default:
 
 ```bash
-pi --adhd
+pi --adhd-plan
 ```
 
 ### Verify
@@ -487,12 +487,12 @@ pi --adhd
 pi list
 ```
 
-Confirm the GitHub package is listed, then type `/i-have-adhd` and check that `● ADHD ON` appears in the footer.
+Confirm the GitHub package is listed, then type `/i-have-adhd-plan` and check that `● ADHD PLAN ON` appears in the footer.
 
 ### Update
 
 ```bash
-pi update https://github.com/ayghri/i-have-adhd
+pi update https://github.com/BnJam/i-have-adhd-plan
 ```
 
 Or update every unpinned Pi package with `pi update --extensions`.
@@ -500,7 +500,7 @@ Or update every unpinned Pi package with `pi update --extensions`.
 ### Uninstall
 
 ```bash
-pi remove https://github.com/ayghri/i-have-adhd
+pi remove https://github.com/BnJam/i-have-adhd-plan
 ```
 
 ### Always-on (optional)
@@ -508,7 +508,7 @@ pi remove https://github.com/ayghri/i-have-adhd
 Create a flag in Pi's agent configuration directory:
 
 ```bash
-touch ~/.pi/agent/.i-have-adhd-always
+touch ~/.pi/agent/.i-have-adhd-plan-always
 ```
 
 The extension checks the flag at every new, resumed, forked, or reloaded session. A saved choice for the current session wins over this default, so `stop adhd mode` keeps that session disabled.
@@ -516,12 +516,12 @@ The extension checks the flag at every new, resumed, forked, or reloaded session
 Back to on-demand:
 
 ```bash
-rm ~/.pi/agent/.i-have-adhd-always
+rm ~/.pi/agent/.i-have-adhd-plan-always
 ```
 
 ### Config file (optional)
 
-Create `~/.pi/agent/i-have-adhd.json` in Pi's agent configuration directory:
+Create `~/.pi/agent/i-have-adhd-plan.json` in Pi's agent configuration directory:
 
 ```json
 {
@@ -530,12 +530,12 @@ Create `~/.pi/agent/i-have-adhd.json` in Pi's agent configuration directory:
 }
 ```
 
-- `alwaysOn`: start every session with the rules active — same as the `.i-have-adhd-always` flag file, which still works
-- `hideStatus`: keep the `● ADHD ON` status-bar entry hidden; the rules and the `/i-have-adhd` command still work
+- `alwaysOn`: start every session with the rules active — same as the `.i-have-adhd-plan-always` flag file, which still works
+- `hideStatus`: keep the `● ADHD PLAN ON` status-bar entry hidden; the rules and the `/i-have-adhd-plan` command still work
 
 Read once at extension startup, so restart Pi after changing it. A saved choice for the current session wins over `alwaysOn`, so `stop adhd mode` keeps that session disabled.
 
-If `PI_CODING_AGENT_DIR` is set, put `.i-have-adhd-always` in that directory instead. Run `/reload` or start a new session after changing the flag.
+If `PI_CODING_AGENT_DIR` is set, put `.i-have-adhd-plan-always` in that directory instead. Run `/reload` or start a new session after changing the flag.
 
 </details>
 
@@ -546,24 +546,24 @@ If `PI_CODING_AGENT_DIR` is set, put `.i-have-adhd-always` in that directory ins
 ### Install
 
 ```bash
-omp plugin marketplace add ayghri/i-have-adhd
-omp plugin install --scope user i-have-adhd@i-have-adhd
+omp plugin marketplace add BnJam/i-have-adhd-plan
+omp plugin install --scope user i-have-adhd-plan@i-have-adhd-plan
 ```
 
-Start a new OMP session and run `/i-have-adhd` to toggle the mode.
+Start a new OMP session and run `/i-have-adhd-plan` to toggle the mode.
 
 ### Update
 
 ```bash
-omp plugin marketplace update i-have-adhd
-omp plugin upgrade --scope user i-have-adhd@i-have-adhd
+omp plugin marketplace update i-have-adhd-plan
+omp plugin upgrade --scope user i-have-adhd-plan@i-have-adhd-plan
 ```
 
 ### Uninstall
 
 ```bash
-omp plugin uninstall --scope user i-have-adhd@i-have-adhd
-omp plugin marketplace remove i-have-adhd
+omp plugin uninstall --scope user i-have-adhd-plan@i-have-adhd-plan
+omp plugin marketplace remove i-have-adhd-plan
 ```
 
 </details>
@@ -575,13 +575,13 @@ omp plugin marketplace remove i-have-adhd
 ### Install
 
 ```bash
-qwen extensions install ayghri/i-have-adhd
+qwen extensions install BnJam/i-have-adhd-plan
 ```
 
 Qwen Code supports the GitHub shorthand and installs the repository as a
 native extension. The extension discovers the skill under `skills/`.
 
-Type `/i-have-adhd` to invoke the skill explicitly. Installing the extension
+Type `/i-have-adhd-plan` to invoke the skill explicitly. Installing the extension
 does not change output until the skill is invoked.
 
 ### Verify
@@ -596,18 +596,18 @@ Then start a new Qwen Code session and run:
 /skills
 ```
 
-Confirm that `i-have-adhd` appears in the list.
+Confirm that `i-have-adhd-plan` appears in the list.
 
 ### Update
 
 ```bash
-qwen extensions update i-have-adhd
+qwen extensions update i-have-adhd-plan
 ```
 
 ### Uninstall
 
 ```bash
-qwen extensions uninstall i-have-adhd
+qwen extensions uninstall i-have-adhd-plan
 ```
 
 </details>
@@ -622,21 +622,21 @@ Zed's Agent reads Agent Skills natively: the same `SKILL.md`, no conversion. (Ze
 In the Agent Panel, open the Skills manager and choose **Create skill from URL** (also in the command palette as `agent: create skill from url`), then paste:
 
 ```
-https://github.com/ayghri/i-have-adhd/blob/main/skills/i-have-adhd/SKILL.md
+https://github.com/BnJam/i-have-adhd-plan/blob/main/skills/i-have-adhd-plan/SKILL.md
 ```
 
-Save it in **User** scope for every project, or **Project** scope for one. Then type `/i-have-adhd` in the Agent Panel.
+Save it in **User** scope for every project, or **Project** scope for one. Then type `/i-have-adhd-plan` in the Agent Panel.
 
 Prefer the filesystem? Clone the repo and drop the skill folder into your user skills directory:
 
 ```bash
-git clone https://github.com/ayghri/i-have-adhd
-cp -R i-have-adhd/skills/i-have-adhd ~/.config/zed/skills/
+git clone https://github.com/BnJam/i-have-adhd-plan
+cp -R i-have-adhd-plan/skills/i-have-adhd-plan ~/.config/zed/skills/
 ```
 
 ### Verify
 
-Open the Skills manager in the Agent Panel and confirm `i-have-adhd` is listed. Or type `/` and confirm it appears.
+Open the Skills manager in the Agent Panel and confirm `i-have-adhd-plan` is listed. Or type `/` and confirm it appears.
 
 ### Update
 
@@ -644,7 +644,7 @@ Re-import from the same URL (overwrites), or re-copy the folder after `git pull`
 
 ### Uninstall
 
-Remove `i-have-adhd` from the Skills manager, or delete `~/.config/zed/skills/i-have-adhd`.
+Remove `i-have-adhd-plan` from the Skills manager, or delete `~/.config/zed/skills/i-have-adhd-plan`.
 
 ### Always-on (optional)
 
@@ -679,20 +679,20 @@ Works with any harness that reads agent skills. Swap `-a <agent>` for yours.
 ### Install
 
 ```bash
-npx skills add ayghri/i-have-adhd                  # this workspace
-npx skills add ayghri/i-have-adhd -g               # all projects
-npx skills add ayghri/i-have-adhd -a cursor -y     # one agent only
-npx skills add ayghri/i-have-adhd -a opencode -y
+npx skills add BnJam/i-have-adhd-plan                  # this workspace
+npx skills add BnJam/i-have-adhd-plan -g               # all projects
+npx skills add BnJam/i-have-adhd-plan -a cursor -y     # one agent only
+npx skills add BnJam/i-have-adhd-plan -a opencode -y
 ```
 
-New agent chat, type `/i-have-adhd`.
+New agent chat, type `/i-have-adhd-plan`.
 
 Without the CLI, copy the skill folder into whatever path your agent scans:
 
 ```bash
-git clone https://github.com/ayghri/i-have-adhd
+git clone https://github.com/BnJam/i-have-adhd-plan
 mkdir -p ~/.cursor/skills     # Cursor. Use .agents/skills for OpenCode, or your agent's own path
-cp -R i-have-adhd/skills/i-have-adhd ~/.cursor/skills/
+cp -R i-have-adhd-plan/skills/i-have-adhd-plan ~/.cursor/skills/
 ```
 
 ### Verify
@@ -705,15 +705,15 @@ npx skills ls -g    # if installed globally
 ### Update
 
 ```bash
-npx skills update i-have-adhd
+npx skills update i-have-adhd-plan
 npx skills update -g    # if installed globally
 ```
 
 ### Uninstall
 
 ```bash
-npx skills remove i-have-adhd
-npx skills remove i-have-adhd -g    # if installed globally
+npx skills remove i-have-adhd-plan
+npx skills remove i-have-adhd-plan -g    # if installed globally
 ```
 
 ### Always-on (optional)
@@ -744,31 +744,29 @@ Exceptions: explain fully when asked to explain. Confirm before destructive acti
 ## How activation works
 
 1. **Installed, not invoked.** In Claude Code, Qwen Code, and Codex, nothing happens until you invoke the skill explicitly. Claude Code and Qwen Code honor `disable-model-invocation: true` in `SKILL.md`; Codex honors `policy.allow_implicit_invocation: false` in `agents/openai.yaml`. Other harnesses may load every skill's description at startup and activate the skill themselves.
-2. **You invoke it explicitly.** Type `/i-have-adhd` in Claude Code or Qwen Code, or `$i-have-adhd` in Codex. Rules stay on for that session. "stop adhd mode" or "normal mode" turns them off.
-3. **You touch `~/.claude/.i-have-adhd-always`** (Claude Code). A `SessionStart` hook loads the full ruleset from message one, every session.
+2. **You invoke it explicitly.** Type `/i-have-adhd-plan` in Claude Code or Qwen Code, or `$i-have-adhd-plan` in Codex. Rules stay on for that session. "stop adhd mode" or "normal mode" turns them off.
+3. **You touch `~/.claude/.i-have-adhd-plan-always`** (Claude Code). A `SessionStart` hook loads the full ruleset from message one, every session.
 4. **You add the always-on snippet above** (other harnesses). Keeps the core rules in your agent's persistent context.
 
 In Claude Code, Qwen Code, and Codex, no middle ground: if you did not turn it on, it is off.
 
 ## Troubleshooting
 
-**`/i-have-adhd` not in autocomplete.** Restart the agent. The plugin index is read at startup.
+**`/i-have-adhd-plan` not in autocomplete.** Restart the agent. The plugin index is read at startup.
 
-**Always-on flag has no effect.** Update the plugin (`claude plugin marketplace update i-have-adhd`) and restart. Hooks are read at startup, and the flag needs the plugin version that ships `hooks/hooks.json`.
+**Always-on flag has no effect.** Update the plugin (`claude plugin marketplace update i-have-adhd-plan`) and restart. Hooks are read at startup, and the flag needs the plugin version that ships `hooks/hooks.json`.
 
 **`claude plugin marketplace add` fails.** Use the `owner/repo` form. A local path must point at the repo root, not `.claude-plugin/`.
 
-**Installed but replies still preamble.** Open a new session. If it still drifts, tighten the wording in `skills/i-have-adhd/SKILL.md`.
+**Installed but replies still preamble.** Open a new session. If it still drifts, tighten the wording in `skills/i-have-adhd-plan/SKILL.md`.
 
-**Want different rules.** Fork, edit `skills/i-have-adhd/SKILL.md`, then swap your copy in:
+**Want different rules.** Fork, edit `skills/i-have-adhd-plan/SKILL.md`, then swap your copy in:
 
 ```bash
-claude plugin uninstall i-have-adhd            # drop the upstream copy first:
-claude plugin marketplace remove i-have-adhd   # fork and upstream share both names
-claude plugin marketplace add <your-username>/i-have-adhd
-claude plugin install i-have-adhd@i-have-adhd
+claude plugin marketplace add <your-username>/i-have-adhd-plan
+claude plugin install i-have-adhd-plan@i-have-adhd-plan
 ```
 
-Restart, then re-invoke `/i-have-adhd`.
+Restart, then re-invoke `/i-have-adhd-plan`.
 
 **Skill missing after `npx skills add`.** Start a new agent chat. Skills are indexed at session start. Confirm the folder landed where your agent scans (`~/.cursor/skills/` for Cursor, `.agents/skills/` for OpenCode) and that the frontmatter `name` matches the folder name.

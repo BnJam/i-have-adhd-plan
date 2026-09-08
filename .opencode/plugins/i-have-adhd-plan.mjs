@@ -1,19 +1,19 @@
-// i-have-adhd — OpenCode plugin.
+// i-have-adhd-plan — OpenCode plugin.
 //
 // Mirrors the Claude Code / Codex behaviour for OpenCode: the skill in
-// `skills/i-have-adhd/SKILL.md` is the single source of truth for the ruleset.
+// `skills/i-have-adhd-plan/SKILL.md` is the single source of truth for the ruleset.
 //
-//   • On demand   — registers the skills directory and a `/i-have-adhd`
+//   • On demand   — registers the skills directory and a `/i-have-adhd-plan`
 //                   command so the ruleset applies for the rest of the session.
 //   • Always-on   — when the opt-in flag file exists, the full ruleset is
 //                   appended to the system prompt every turn (the OpenCode
 //                   equivalent of the SessionStart hook in hooks/always-on.sh).
 //
-// Opt in to always-on:   touch ~/.config/opencode/.i-have-adhd-always
-// Opt back out:          rm ~/.config/opencode/.i-have-adhd-always
+// Opt in to always-on:   touch ~/.config/opencode/.i-have-adhd-plan-always
+// Opt back out:          rm ~/.config/opencode/.i-have-adhd-plan-always
 //
 // Install — add to opencode.json:
-//   { "plugin": ["./.opencode/plugins/i-have-adhd.mjs"] }
+//   { "plugin": ["./.opencode/plugins/i-have-adhd-plan.mjs"] }
 
 import fs from 'fs';
 import os from 'os';
@@ -22,14 +22,14 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const skillsDir = path.resolve(__dirname, '../../skills');
-const skillPath = path.join(skillsDir, 'i-have-adhd', 'SKILL.md');
+const skillPath = path.join(skillsDir, 'i-have-adhd-plan', 'SKILL.md');
 
-// Always-on opt-in flag, mirroring Claude Code's ~/.claude/.i-have-adhd-always
+// Always-on opt-in flag, mirroring Claude Code's ~/.claude/.i-have-adhd-plan-always
 // but under OpenCode's config dir so the two tools stay independent.
 const flagPath = path.join(
   process.env.XDG_CONFIG_HOME || path.join(os.homedir(), '.config'),
   'opencode',
-  '.i-have-adhd-always',
+  '.i-have-adhd-plan-always',
 );
 
 // Read SKILL.md and strip a leading YAML frontmatter block (--- ... ---).
@@ -44,7 +44,7 @@ function rulesetBody() {
 
 export default async () => {
   return {
-    // Make the skill discoverable (so the `skill` tool and the /i-have-adhd
+    // Make the skill discoverable (so the `skill` tool and the /i-have-adhd-plan
     // command can load it).
     config: async (config) => {
       config.skills = config.skills || {};

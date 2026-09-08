@@ -6,7 +6,7 @@
 ### 安装
 
 ```bash
-agy plugin install https://github.com/ayghri/i-have-adhd
+agy plugin install https://github.com/BnJam/i-have-adhd-plan
 ```
 
 ### 验证
@@ -18,17 +18,17 @@ agy plugin list
 ### 更新
 
 ```bash
-agy plugin uninstall i-have-adhd
-agy plugin install https://github.com/ayghri/i-have-adhd
+agy plugin uninstall i-have-adhd-plan
+agy plugin install https://github.com/BnJam/i-have-adhd-plan
 ```
 
 ### 卸载
 
 ```bash
-agy plugin uninstall i-have-adhd
+agy plugin uninstall i-have-adhd-plan
 ```
 
-也可以保留安装并将其关闭：`agy plugin disable i-have-adhd`。
+也可以保留安装并将其关闭：`agy plugin disable i-have-adhd-plan`。
 
 ### 始终启用（可选）
 
@@ -61,11 +61,11 @@ agy plugin uninstall i-have-adhd
 ### 安装
 
 ```bash
-claude plugin marketplace add ayghri/i-have-adhd
-claude plugin install i-have-adhd@i-have-adhd
+claude plugin marketplace add BnJam/i-have-adhd-plan
+claude plugin install i-have-adhd-plan@i-have-adhd-plan
 ```
 
-输入 `/i-have-adhd`。
+输入 `/i-have-adhd-plan`。
 
 ### 验证
 
@@ -76,36 +76,36 @@ claude plugin list
 ### 更新
 
 ```bash
-claude plugin marketplace update i-have-adhd
+claude plugin marketplace update i-have-adhd-plan
 ```
 
 ### 卸载
 
 ```bash
-claude plugin uninstall i-have-adhd
-claude plugin marketplace remove i-have-adhd
+claude plugin uninstall i-have-adhd-plan
+claude plugin marketplace remove i-have-adhd-plan
 ```
 
-也可以保留安装并将其关闭：`claude plugin disable i-have-adhd`。
+也可以保留安装并将其关闭：`claude plugin disable i-have-adhd-plan`。
 
 ### 始终启用（可选）
 
-`SessionStart` 钩子会在每次会话开始时加载完整规则，无需输入 `/i-have-adhd`：
+`SessionStart` 钩子会在每次会话开始时加载完整规则，无需输入 `/i-have-adhd-plan`：
 
 ```bash
-touch ~/.claude/.i-have-adhd-always
+touch ~/.claude/.i-have-adhd-plan-always
 ```
 
 如果你使用自定义 Claude 配置目录，请改为在其中创建标志文件：
 
 ```bash
-touch "$CLAUDE_CONFIG_DIR/.i-have-adhd-always"
+touch "$CLAUDE_CONFIG_DIR/.i-have-adhd-plan-always"
 ```
 
 恢复为按需启用：
 
 ```bash
-rm ~/.claude/.i-have-adhd-always
+rm ~/.claude/.i-have-adhd-plan-always
 ```
 
 该钩子只在标志文件存在时触发，因此仅安装插件不会改变任何行为。“stop adhd mode”仍可在当前会话中将其关闭。
@@ -119,11 +119,11 @@ rm ~/.claude/.i-have-adhd-always
 ### 安装
 
 ```bash
-codex plugin marketplace add ayghri/i-have-adhd --ref main
-codex plugin add i-have-adhd@i-have-adhd
+codex plugin marketplace add BnJam/i-have-adhd-plan --ref main
+codex plugin add i-have-adhd-plan@i-have-adhd-plan
 ```
 
-明确输入 `$i-have-adhd` 来启用此技能。Codex 不会自动调用它。
+明确输入 `$i-have-adhd-plan` 来启用此技能。Codex 不会自动调用它。
 
 ### 验证
 
@@ -134,16 +134,16 @@ codex plugin list
 ### 更新
 
 ```bash
-codex plugin marketplace upgrade i-have-adhd
-codex plugin remove i-have-adhd
-codex plugin add i-have-adhd@i-have-adhd
+codex plugin marketplace upgrade i-have-adhd-plan
+codex plugin remove i-have-adhd-plan
+codex plugin add i-have-adhd-plan@i-have-adhd-plan
 ```
 
 ### 卸载
 
 ```bash
-codex plugin remove i-have-adhd
-codex plugin marketplace remove i-have-adhd
+codex plugin remove i-have-adhd-plan
+codex plugin marketplace remove i-have-adhd-plan
 ```
 
 ### 始终启用（可选）
@@ -180,16 +180,16 @@ Gemini CLI 没有插件市场，因此有两种原生方式：**自定义命令*
 
 ```bash
 mkdir -p ~/.gemini/commands
-curl -fsSL https://raw.githubusercontent.com/ayghri/i-have-adhd/main/skills/i-have-adhd/agents/gemini.toml \
-  -o ~/.gemini/commands/i-have-adhd.toml
+curl -fsSL https://raw.githubusercontent.com/BnJam/i-have-adhd-plan/main/skills/i-have-adhd-plan/agents/gemini.toml \
+  -o ~/.gemini/commands/i-have-adhd-plan.toml
 ```
 
-开始新会话并输入 `/i-have-adhd`。它会在该会话中持续启用。
+开始新会话并输入 `/i-have-adhd-plan`。它会在该会话中持续启用。
 
 ### 安装 (extension, always-on)
 
 ```bash
-gemini extensions install https://github.com/ayghri/i-have-adhd
+gemini extensions install https://github.com/BnJam/i-have-adhd-plan
 ```
 
 扩展会加载导入完整技能的 `GEMINI.md`，因此规则从第一条消息起生效。必须安装 `git`。
@@ -198,23 +198,23 @@ gemini extensions install https://github.com/ayghri/i-have-adhd
 
 ```bash
 gemini extensions list          # 扩展方式
-ls ~/.gemini/commands           # command route: i-have-adhd.toml present
+ls ~/.gemini/commands           # command route: i-have-adhd-plan.toml present
 ```
 
-也可以在会话中输入 `/`，确认列表中有 `i-have-adhd`。
+也可以在会话中输入 `/`，确认列表中有 `i-have-adhd-plan`。
 
 ### 更新
 
 ```bash
-gemini extensions update i-have-adhd    # 扩展方式
+gemini extensions update i-have-adhd-plan    # 扩展方式
 # 命令方式：重新运行上面的 curl
 ```
 
 ### 卸载
 
 ```bash
-gemini extensions uninstall i-have-adhd    # 扩展方式
-rm ~/.gemini/commands/i-have-adhd.toml     # command route
+gemini extensions uninstall i-have-adhd-plan    # 扩展方式
+rm ~/.gemini/commands/i-have-adhd-plan.toml     # command route
 ```
 
 </details>
@@ -227,21 +227,21 @@ Copilot 原生读取 Agent Skills：直接使用同一个 `SKILL.md`，无需转
 ### 安装
 
 ```bash
-npx skills add ayghri/i-have-adhd -a github-copilot        # 此项目
-npx skills add ayghri/i-have-adhd -a github-copilot -g     # 所有项目
+npx skills add BnJam/i-have-adhd-plan -a github-copilot        # 此项目
+npx skills add BnJam/i-have-adhd-plan -a github-copilot -g     # 所有项目
 ```
 
 不使用 CLI 时，将技能文件夹复制到 Copilot 扫描的任一目录：
 
 ```bash
-git clone https://github.com/ayghri/i-have-adhd
+git clone https://github.com/BnJam/i-have-adhd-plan
 mkdir -p ~/.copilot/skills
-cp -R i-have-adhd/skills/i-have-adhd ~/.copilot/skills/
+cp -R i-have-adhd-plan/skills/i-have-adhd-plan ~/.copilot/skills/
 ```
 
 ### 验证
 
-在聊天输入框中输入 `/`，确认出现 `i-have-adhd`。或者：
+在聊天输入框中输入 `/`，确认出现 `i-have-adhd-plan`。或者：
 
 ```bash
 npx skills list
@@ -251,7 +251,7 @@ npx skills ls -g    # 如果全局安装
 ### 更新
 
 ```bash
-npx skills update i-have-adhd
+npx skills update i-have-adhd-plan
 ```
 
 也可以在 `git pull` 后重新复制该文件夹。
@@ -259,10 +259,10 @@ npx skills update i-have-adhd
 ### 卸载
 
 ```bash
-npx skills remove i-have-adhd
+npx skills remove i-have-adhd-plan
 ```
 
-也可以从安装所在的 skills 目录删除 `i-have-adhd` 文件夹。
+也可以从安装所在的 skills 目录删除 `i-have-adhd-plan` 文件夹。
 
 ### 启用说明
 
@@ -299,17 +299,17 @@ Copilot 遵循 `disable-model-invocation`：与 Claude Code 相同，在调用�
 ### 安装
 
 ```bash
-hermes skills install ayghri/i-have-adhd/skills/i-have-adhd
+hermes skills install BnJam/i-have-adhd-plan/skills/i-have-adhd-plan
 ```
 
-输入 `/i-have-adhd`。 The skill installs into `~/.hermes/skills/` and is exposed as a slash command at the next session start.
+输入 `/i-have-adhd-plan`。 The skill installs into `~/.hermes/skills/` and is exposed as a slash command at the next session start.
 
 想先浏览内容？将此仓库添加为技能源（“tap”），然后搜索并安装：
 
 ```bash
-hermes skills tap add ayghri/i-have-adhd
+hermes skills tap add BnJam/i-have-adhd-plan
 hermes skills search adhd
-hermes skills install ayghri/i-have-adhd/skills/i-have-adhd
+hermes skills install BnJam/i-have-adhd-plan/skills/i-have-adhd-plan
 ```
 
 ### 验证
@@ -321,16 +321,16 @@ hermes skills list
 ### 更新
 
 ```bash
-hermes skills update i-have-adhd
+hermes skills update i-have-adhd-plan
 ```
 
 ### 卸载
 
 ```bash
-hermes skills uninstall i-have-adhd
+hermes skills uninstall i-have-adhd-plan
 ```
 
-也可以同时删除 tap：`hermes skills tap remove ayghri/i-have-adhd`。
+也可以同时删除 tap：`hermes skills tap remove BnJam/i-have-adhd-plan`。
 
 ### 始终启用（可选）
 
@@ -366,18 +366,18 @@ hermes skills uninstall i-have-adhd
 
 1. 输入 `/plugins`。
 2. 选择 **Custom**。
-3. 粘贴 `https://github.com/ayghri/i-have-adhd` 并 Enter。
+3. 粘贴 `https://github.com/BnJam/i-have-adhd-plan` 并 Enter。
 4. 选择 **Trust and install**。
 
-使用斜杠命令 `/skill:i-have-adhd` 显式调用此技能。
+使用斜杠命令 `/skill:i-have-adhd-plan` 显式调用此技能。
 
 ### 更新
 
-在 Kimi Code 会话中输入 `/plugins`，将光标移至 **I Have ADHD**，按 `R`。
+在 Kimi Code 会话中输入 `/plugins`，将光标移至 **I Have ADHD Plan**，按 `R`。
 
 ### 卸载
 
-在 Kimi Code 会话中输入 `/plugins`，将光标移至 **I Have ADHD**，按 `D`。
+在 Kimi Code 会话中输入 `/plugins`，将光标移至 **I Have ADHD Plan**，按 `D`。
 
 </details>
 
@@ -390,15 +390,15 @@ Pi 实现了 Agent Skills 标准，因此可直接加载同一个 `SKILL.md`，�
 ### 安装
 
 ```bash
-npx skills add ayghri/i-have-adhd -a pi -y
+npx skills add BnJam/i-have-adhd-plan -a pi -y
 ```
 
 偏好文件系统方式？Pi 会在 `~/.pi/agent/skills/` 和 `~/.agents/skills/`（全局），以及 `.pi/skills/` 和 `.agents/skills/`（项目）中发现技能：
 
 ```bash
-git clone https://github.com/ayghri/i-have-adhd
+git clone https://github.com/BnJam/i-have-adhd-plan
 mkdir -p ~/.pi/agent/skills
-cp -R i-have-adhd/skills/i-have-adhd ~/.pi/agent/skills/
+cp -R i-have-adhd-plan/skills/i-have-adhd-plan ~/.pi/agent/skills/
 ```
 
 在 Pi 的 `settings.json` 中启用技能斜杠命令：
@@ -407,7 +407,7 @@ cp -R i-have-adhd/skills/i-have-adhd ~/.pi/agent/skills/
 { "enableSkillCommands": true }
 ```
 
-开始新会话并输入 `/skill:i-have-adhd`。
+开始新会话并输入 `/skill:i-have-adhd-plan`。
 
 ### 验证
 
@@ -415,12 +415,12 @@ cp -R i-have-adhd/skills/i-have-adhd ~/.pi/agent/skills/
 npx skills list
 ```
 
-也可以在会话中输入 `/skill:`，确认列表中有 `i-have-adhd`。
+也可以在会话中输入 `/skill:`，确认列表中有 `i-have-adhd-plan`。
 
 ### 更新
 
 ```bash
-npx skills update i-have-adhd
+npx skills update i-have-adhd-plan
 ```
 
 也可以在 `git pull` 后重新复制该文件夹。
@@ -428,10 +428,10 @@ npx skills update i-have-adhd
 ### 卸载
 
 ```bash
-npx skills remove i-have-adhd
+npx skills remove i-have-adhd-plan
 ```
 
-也可以删除 `~/.pi/agent/skills/i-have-adhd`。
+也可以删除 `~/.pi/agent/skills/i-have-adhd-plan`。
 
 ### 始终启用（可选）
 
@@ -465,12 +465,12 @@ npx skills remove i-have-adhd
 ### 安装
 
 ```bash
-qwen extensions install ayghri/i-have-adhd
+qwen extensions install BnJam/i-have-adhd-plan
 ```
 
 Qwen Code 支持 GitHub 短路径，并可将该仓库安装为原生扩展。扩展会发现 `skills/` 下的技能。
 
-安装扩展本身不会改变输出，除非输入 `/i-have-adhd` 显式调用此技能。
+安装扩展本身不会改变输出，除非输入 `/i-have-adhd-plan` 显式调用此技能。
 
 ### 验证
 
@@ -484,18 +484,18 @@ qwen extensions list
 /skills
 ```
 
-确认列表中出现 `i-have-adhd`。
+确认列表中出现 `i-have-adhd-plan`。
 
 ### 更新
 
 ```bash
-qwen extensions update i-have-adhd
+qwen extensions update i-have-adhd-plan
 ```
 
 ### 卸载
 
 ```bash
-qwen extensions uninstall i-have-adhd
+qwen extensions uninstall i-have-adhd-plan
 ```
 
 </details>
@@ -510,21 +510,21 @@ Zed 的 Agent 原生读取 Agent Skills：直接使用同一个 `SKILL.md`，无
 在 Agent Panel 中打开 Skills 管理器，选择 **Create skill from URL**（命令面板中为 `agent: create skill from url`），然后粘贴：
 
 ```
-https://github.com/ayghri/i-have-adhd/blob/main/skills/i-have-adhd/SKILL.md
+https://github.com/BnJam/i-have-adhd-plan/blob/main/skills/i-have-adhd-plan/SKILL.md
 ```
 
-要用于所有项目，请保存到 **User** 作用域；仅用于一个项目则保存到 **Project** 作用域。然后在 Agent Panel 中输入 `/i-have-adhd`。
+要用于所有项目，请保存到 **User** 作用域；仅用于一个项目则保存到 **Project** 作用域。然后在 Agent Panel 中输入 `/i-have-adhd-plan`。
 
 偏好文件系统方式？克隆仓库并将技能文件夹放入用户 skills 目录：
 
 ```bash
-git clone https://github.com/ayghri/i-have-adhd
-cp -R i-have-adhd/skills/i-have-adhd ~/.config/zed/skills/
+git clone https://github.com/BnJam/i-have-adhd-plan
+cp -R i-have-adhd-plan/skills/i-have-adhd-plan ~/.config/zed/skills/
 ```
 
 ### 验证
 
-在 Agent Panel 中打开 Skills 管理器，确认列表中有 `i-have-adhd`。也可以输入 `/` 并确认它出现。
+在 Agent Panel 中打开 Skills 管理器，确认列表中有 `i-have-adhd-plan`。也可以输入 `/` 并确认它出现。
 
 ### 更新
 
@@ -532,7 +532,7 @@ cp -R i-have-adhd/skills/i-have-adhd ~/.config/zed/skills/
 
 ### 卸载
 
-从 Skills 管理器中移除 `i-have-adhd`，或删除 `~/.config/zed/skills/i-have-adhd`。
+从 Skills 管理器中移除 `i-have-adhd-plan`，或删除 `~/.config/zed/skills/i-have-adhd-plan`。
 
 ### 始终启用（可选）
 
@@ -567,20 +567,20 @@ cp -R i-have-adhd/skills/i-have-adhd ~/.config/zed/skills/
 ### 安装
 
 ```bash
-npx skills add ayghri/i-have-adhd                  # this workspace
-npx skills add ayghri/i-have-adhd -g               # 所有项目
-npx skills add ayghri/i-have-adhd -a cursor -y     # one agent only
-npx skills add ayghri/i-have-adhd -a opencode -y
+npx skills add BnJam/i-have-adhd-plan                  # this workspace
+npx skills add BnJam/i-have-adhd-plan -g               # 所有项目
+npx skills add BnJam/i-have-adhd-plan -a cursor -y     # one agent only
+npx skills add BnJam/i-have-adhd-plan -a opencode -y
 ```
 
-开启新的智能体聊天并输入 `/i-have-adhd`。
+开启新的智能体聊天并输入 `/i-have-adhd-plan`。
 
 不使用 CLI 时，将技能文件夹复制到智能体扫描的路径：
 
 ```bash
-git clone https://github.com/ayghri/i-have-adhd
+git clone https://github.com/BnJam/i-have-adhd-plan
 mkdir -p ~/.cursor/skills     # Cursor。OpenCode 使用 .agents/skills，其他智能体使用其自身路径
-cp -R i-have-adhd/skills/i-have-adhd ~/.cursor/skills/
+cp -R i-have-adhd-plan/skills/i-have-adhd-plan ~/.cursor/skills/
 ```
 
 ### 验证
@@ -593,15 +593,15 @@ npx skills ls -g    # 如果全局安装
 ### 更新
 
 ```bash
-npx skills update i-have-adhd
+npx skills update i-have-adhd-plan
 npx skills update -g    # 如果全局安装
 ```
 
 ### 卸载
 
 ```bash
-npx skills remove i-have-adhd
-npx skills remove i-have-adhd -g    # 如果全局安装
+npx skills remove i-have-adhd-plan
+npx skills remove i-have-adhd-plan -g    # 如果全局安装
 ```
 
 ### 始终启用（可选）
@@ -632,31 +632,29 @@ npx skills remove i-have-adhd -g    # 如果全局安装
 ## 启用机制
 
 1. **已安装但未调用。** 在 Claude Code、Qwen Code 和 Codex 中，只有明确调用技能后才会发生变化。Claude Code 和 Qwen Code 遵循 `SKILL.md` 中的 `disable-model-invocation: true`；Codex 遵循 `agents/openai.yaml` 中的 `policy.allow_implicit_invocation: false`。其他运行环境可能会在启动时加载每个技能的描述，并自行启用技能。
-2. **明确调用技能。** 在 Claude Code 或 Qwen Code 中输入 `/i-have-adhd`，在 Codex 中输入 `$i-have-adhd`。规则将在该会话中启用。输入“stop adhd mode”或“normal mode”可将其关闭。
-3. **创建 `~/.claude/.i-have-adhd-always`**（Claude Code）。`SessionStart` 钩子会在每次会话中从第一条消息起加载完整规则。
+2. **明确调用技能。** 在 Claude Code 或 Qwen Code 中输入 `/i-have-adhd-plan`，在 Codex 中输入 `$i-have-adhd-plan`。规则将在该会话中启用。输入“stop adhd mode”或“normal mode”可将其关闭。
+3. **创建 `~/.claude/.i-have-adhd-plan-always`**（Claude Code）。`SessionStart` 钩子会在每次会话中从第一条消息起加载完整规则。
 4. **添加上面的始终启用片段**（其他运行环境）。这样会将核心规则保留在智能体的持久上下文中。
 
 在 Claude Code、Qwen Code 和 Codex 中没有中间状态：未启用就是关闭。
 
 ## 故障排除
 
-**自动补全中没有 `/i-have-adhd`。** 重启智能体。插件索引在启动时读取。
+**自动补全中没有 `/i-have-adhd-plan`。** 重启智能体。插件索引在启动时读取。
 
-**始终启用标志无效。** 更新插件（`claude plugin marketplace update i-have-adhd`）并重启。钩子在启动时读取，且该标志需要包含 `hooks/hooks.json` 的插件版本。
+**始终启用标志无效。** 更新插件（`claude plugin marketplace update i-have-adhd-plan`）并重启。钩子在启动时读取，且该标志需要包含 `hooks/hooks.json` 的插件版本。
 
 **`claude plugin marketplace add` 失败。** 使用 `owner/repo` 格式。本地路径必须指向仓库根目录，而不是 `.claude-plugin/`。
 
-**已安装，但回复仍有开场白。** 开启新会话。如果仍然偏离，请收紧 `skills/i-have-adhd/SKILL.md` 中的措辞。
+**已安装，但回复仍有开场白。** 开启新会话。如果仍然偏离，请收紧 `skills/i-have-adhd-plan/SKILL.md` 中的措辞。
 
-**想使用不同规则。** Fork 仓库，编辑 `skills/i-have-adhd/SKILL.md`，然后换成你的副本：
+**想使用不同规则。** Fork 仓库，编辑 `skills/i-have-adhd-plan/SKILL.md`，然后换成你的副本：
 
 ```bash
-claude plugin uninstall i-have-adhd            # 先移除上游副本：
-claude plugin marketplace remove i-have-adhd   # fork 与上游使用相同名称
-claude plugin marketplace add <your-username>/i-have-adhd
-claude plugin install i-have-adhd@i-have-adhd
+claude plugin marketplace add <your-username>/i-have-adhd-plan
+claude plugin install i-have-adhd-plan@i-have-adhd-plan
 ```
 
-重启，然后再次调用 `/i-have-adhd`。
+重启，然后再次调用 `/i-have-adhd-plan`。
 
 **执行 `npx skills add` 后找不到技能。** 开启新的智能体聊天。技能在会话开始时建立索引。确认文件夹位于智能体扫描的位置（Cursor 为 `~/.cursor/skills/`，OpenCode 为 `.agents/skills/`），且 frontmatter 中的 `name` 与文件夹名称一致。
