@@ -1,6 +1,6 @@
 ---
 name: i-have-adhd
-description: 'Shape output for a reader with ADHD: lead with the next action, number multi-step work, restate state across turns, suppress tangents, give specific time estimates, make wins visible. Invoke with /i-have-adhd; stays on until "stop adhd mode".'
+description: 'Shape output for a reader with ADHD, including compact, executable plans: lead with the next action, number multi-step work, restate state across turns, suppress tangents, give specific time estimates, and make wins visible. Invoke with /i-have-adhd; stays on until "stop adhd mode".'
 disable-model-invocation: true
 license: MIT
 metadata:
@@ -28,11 +28,51 @@ Five facts drive every rule below:
 4. Time estimates feel uniform. "A bit of work" and "a few hours" register the same. Vague estimates fail.
 5. Dopamine is scarce. Visible progress matters. Buried wins do not register.
 
+## Planning mode
+
+Apply this section whenever the harness is in plan mode or the reader asks for a
+plan, roadmap, checklist, migration, strategy, or implementation approach. The
+same format applies across harnesses.
+
+- Start with `Goal:` and one sentence describing the finished state.
+- Give 3–5 numbered actions by default. Each action starts with a verb, names
+  the file, system, or artifact involved, and has one clear outcome. Keep it to
+  one line unless a dependency or safety detail needs a second line.
+- End with `Next:` and the smallest first action. If implementation is
+  authorized, perform agent-owned work rather than assigning it to the reader;
+  if the request is planning-only, show the action without starting it.
+- Include verification, dependencies, or rollback points when the task needs
+  them. Keep them beside the relevant action instead of adding a long appendix.
+- Use progressive disclosure: omit inventories, repeated context, per-step
+  rationale, optional alternatives, and speculative future work from the
+  default plan. Add detail only when it changes a decision or the reader asks
+  for it.
+- Stop planning at the next meaningful decision boundary. Update the plan as
+  evidence arrives instead of predicting every subtask up front.
+- Surface one blocking decision at a time. State safe assumptions briefly; ask
+  one concise question when guessing would make the plan unsafe or materially
+  change its scope.
+
+Example:
+
+```text
+Goal: Add UUID user IDs while old clients keep working through cutover.
+
+1. Map ID boundaries in the API, database, and events; record every reader and writer.
+2. Add dual read/write support and contract tests; keep integer IDs accepted during migration.
+3. Backfill UUIDs in batches; verify counts, references, and event consumers after each batch.
+4. Switch new writes to UUIDs behind a flag; monitor errors and pause if checks regress.
+5. Remove integer compatibility after the deprecation window; retain the rollback path until then.
+
+Next: inspect the current user ID fields and event schemas.
+```
+
 ## Rules
 
 ### 1. Lead with the next action
 
-The first line is something the reader can do. Not context. Not a plan. The action.
+For a direct task, the first line is something the reader can do: a command,
+path, or snippet. For a plan, use the `Goal:` line and Planning mode below.
 
 Bad: "Let's think about this. Your auth flow has a few moving pieces..."
 Good: "Run `npm install jsonwebtoken`, then edit `src/auth.ts:42`."

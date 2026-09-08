@@ -31,7 +31,7 @@ Or 🔗 [check the installation instructions](INSTALL.md).
 
 ## What it does
 
-A skill for your coding assistant that stops it from burying the answer. Action first. Steps numbered. No "Hope this helps!"
+A skill for your coding assistant that stops it from burying the answer. Action first. Steps numbered. Plans stay short and executable. No "Hope this helps!"
 
 
 ## What changes
@@ -78,6 +78,10 @@ A skill for your coding assistant that stops it from burying the answer. Action 
 8. Matter-of-fact errors.
 9. Cap lists at 5 items.
 10. No preamble. No recap. No closers.
+
+In plan mode, the default shape is a one-line goal, 3–5 bounded actions, and
+one concrete next action. Detail stays beside the step it protects: add
+verification, dependencies, and rollback points when the task needs them.
 
 ## Tune it
 
