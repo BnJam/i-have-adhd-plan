@@ -24,7 +24,7 @@
 Copy/paste into your CLI prompt:
 
 ```text
-Install the i-have-adhd skill/plugin from https://github.com/BnJam/i-have-adhd-plan, refer to the repo's AGENTS.md for instructions.
+Install the `i-have-adhd` skill/plugin from this repository: https://github.com/BnJam/i-have-adhd-plan. The skill name remains `i-have-adhd` for compatibility; refer to `AGENTS.md` for repository instructions.
 ```
 
 Or 🔗 [check the installation instructions](INSTALL.md).
