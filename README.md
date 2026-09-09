@@ -68,28 +68,36 @@ used by anyone who benefits from lower-friction plans and visible progress.
 
 ## What changes
 
+The adaptation changes how an agent plans and carries work forward. It turns a
+large request into a bounded goal, keeps verification beside the relevant
+step, and makes the next action explicit.
+
 
 <table>
 <tr>
 <td width="50%">
 
-## Before
+## Before: vague implementation guidance
 
-> Great question! Let me think about this. Your auth flow has a few moving pieces: the middleware, the token verification, and the cookie handling. Looking at `src/auth.ts`, the `verifyToken` function (around lines 42-58) seems to be using an older `jsonwebtoken` API. One approach would be to update the package and rewrite that function. After making the change, you'd want to run the auth tests to confirm nothing breaks. By the way, you might also want to look at your dependency versions overall. Hope this helps! Let me know if you want to dig deeper.
+> Your auth change has several moving pieces: routes, middleware, token
+> verification, cookies, and tests. You could update the package and rewrite
+> the verification function, then run the tests. There may also be other
+> dependency updates to consider.
 
 </td>
 
 <td width="50%">
 
-## After
+## After: an executable agent plan
 
-> Run `npm install jsonwebtoken@latest`, then edit `src/auth.ts:42`.
+> Goal: Update token verification while keeping existing login behavior working.
 >
 > 1. Open `src/auth.ts`
-> 2. Replace `verifyToken` (lines 42–58) with the snippet below
-> 3. Run `npm test -- auth.spec.ts`
+> 2. Inspect `verifyToken` and its callers; record the compatibility requirements.
+> 3. Update the implementation and add focused regression coverage.
+> 4. Run `npm test -- auth.spec.ts`; stop if the contract changes unexpectedly.
 >
-> Next: paste the first failing line if any test fails.
+> Next: inspect `src/auth.ts` and identify the current token-verification contract.
 
 </td>
 </tr>
