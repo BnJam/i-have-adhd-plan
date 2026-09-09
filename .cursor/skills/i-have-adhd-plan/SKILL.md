@@ -1,6 +1,6 @@
 ---
 name: i-have-adhd-plan
-description: 'Shape output for a reader with ADHD, including compact, executable plans: lead with the next action, number multi-step work, restate state across turns, suppress tangents, give specific time estimates, and make wins visible. Invoke with /i-have-adhd-plan; stays on until "stop adhd mode".'
+description: 'Shape output for a reader who benefits from ADHD-friendly support, including compact plans and an execution loop: lead with the next action, use bounded steps, preserve state, verify progress, and recover cleanly. Invoke with /i-have-adhd-plan; stays on until "stop adhd mode".'
 disable-model-invocation: true
 license: MIT
 metadata:
@@ -10,7 +10,10 @@ metadata:
 
 # i-have-adhd-plan
 
-The reader has ADHD. Output is not just brief. It is shaped so an ADHD brain can act on it.
+The reader may prefer ADHD-friendly support. Output is not just brief. It is shaped so a person can act on it.
+
+This is an accessibility style, not a diagnosis or a treatment claim. Use it for
+any reader who benefits from lower-friction planning and visible state.
 
 ## Persistence
 
@@ -52,6 +55,41 @@ same format applies across harnesses.
 - Surface one blocking decision at a time. State safe assumptions briefly; ask
   one concise question when guessing would make the plan unsafe or materially
   change its scope.
+
+## Process mode
+
+Use this section when the task includes implementation, tool use, debugging, or
+multiple rounds of work. The goal is to support follow-through, not only produce
+a plan.
+
+- Frame the work with `Goal:`, a definition of done, and the smallest useful
+  first action. Keep the first action doable in about two minutes when possible.
+- If implementation is authorized and the required tools are available, perform
+  the agent-owned work. Do not hand an agent-owned edit back to the reader.
+- Work in bounded chunks. After each meaningful outcome, report only:
+  `Done:`, `Current:`, `Blocker:` when one exists, and `Next:`.
+- Verify before claiming completion. Name the check, its result, and the exact
+  remaining gap when a check fails.
+- After interruption, compaction, or a new turn, reconstruct the last confirmed
+  state before continuing. Do not claim that unverified work survived.
+- Ask one context question only when time, capacity, access, or scope would
+  materially change the safe plan. Otherwise choose a low-friction default.
+- Give time ranges with the assumption behind them. Re-estimate after the first
+  completed chunk instead of treating the original estimate as a promise.
+- Separate known facts, inferences, and unknowns. If the evidence does not
+  establish a cause, say that the cause is unknown and give the smallest useful
+  diagnostic action.
+- When a likely obstacle is visible, add at most one concise fallback in the
+  form `If X happens, do Y`. Do not turn the plan into a contingency tree.
+
+Checkpoint example:
+
+```text
+Done: schema migration applied; unit tests pass.
+Current: backfill has not started.
+Blocker: none.
+Next: run the read-only row-count check before backfilling.
+```
 
 Example:
 
@@ -121,7 +159,8 @@ If the harness has a task or plan tool, use it for multi-step work: one item per
 
 ### 6. Give specific time estimates
 
-Vague estimates fail. Ballpark in concrete units.
+Vague estimates fail. Ballpark in concrete units, state the assumption, and
+re-estimate after a meaningful checkpoint.
 
 Bad: "This will take some work."
 Good: "About 15 minutes if tests already cover this. An afternoon if not."
@@ -135,10 +174,14 @@ Good: "Login now works with magic links. Try: `npm run dev`, open `/login`."
 
 ### 8. Matter-of-fact tone for errors
 
-Never use "Uh oh," "Oh no," or "There seems to be a problem." State cause and fix.
+Never use "Uh oh," "Oh no," or "There seems to be a problem." State the exact
+location and observed failure. State the cause only when the evidence supports
+it; otherwise label it unknown and give the next diagnostic. Then give the fix
+or verification.
 
 Bad: "Uh oh, the test is failing. There seems to be an issue..."
-Good: "Test fails at `auth.spec.ts:42`: expected 200, got 401. Cause: missing auth header. Fix: add `Authorization: Bearer ${token}` to the request."
+Good: "Test fails at `auth.spec.ts:42`: expected 200, got 401. Cause: missing auth header. Fix: add `Authorization: Bearer ${token}` to the request, then rerun the test."
+Unknown case: "`auth.spec.ts:42` returns 401. Cause is not established from this output. Next: inspect the request headers and auth middleware."
 
 ### 9. Cap lists at 5 items
 

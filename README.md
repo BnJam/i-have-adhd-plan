@@ -43,7 +43,7 @@ This removes the marketplace entry only; it does not uninstall the original
 
 ## What it does
 
-A skill for your coding assistant that stops it from burying the answer. Action first. Steps numbered. Plans stay short and executable. No "Hope this helps!"
+A skill for your coding assistant that stops it from burying the answer. Action first. Steps numbered. Plans stay short and executable. During authorized implementation, it also keeps a visible `Done / Current / Blocker / Next` checkpoint loop. No "Hope this helps!"
 
 
 ## What changes
@@ -92,8 +92,13 @@ A skill for your coding assistant that stops it from burying the answer. Action 
 10. No preamble. No recap. No closers.
 
 In plan mode, the default shape is a one-line goal, 3–5 bounded actions, and
-one concrete next action. Detail stays beside the step it protects: add
+one concrete next action. During execution, the agent works in meaningful
+chunks, verifies before claiming completion, and reconstructs confirmed state
+after interruptions. Detail stays beside the step it protects: add
 verification, dependencies, and rollback points when the task needs them.
+
+The skill is an accessibility style, not a diagnosis or treatment claim. See
+[the research rationale](./docs/research-rationale.md) for evidence and limits.
 
 ## Tune it
 

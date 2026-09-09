@@ -3,6 +3,10 @@
 First recorded run of the harness in `scripts/`. Reproduce with the commands in
 [README.md](README.md).
 
+This is a historical result for the pre-process-upgrade 14-case catalog. It is
+not a release result for the current 20-case catalog; rerun paired evaluations
+before making claims about the updated skill.
+
 | | |
 |---|---|
 | Date | 2026-08-02 |
