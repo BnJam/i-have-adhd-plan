@@ -2,7 +2,7 @@
   <img src="./logo.png" alt="i-have-adhd-plan" width="140" />
 </p>
 <p align="center">
-  <strong align="center">ADHD-friendly outputs. No ADHD diagnosis needed!</strong>
+  <strong align="center">ADHD-friendly planning for agents and developers</strong>
 </p>
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/github/license/BnJam/i-have-adhd-plan?style=flat" alt="License"></a>
@@ -43,7 +43,27 @@ This removes the marketplace entry only; it does not uninstall the original
 
 ## What it does
 
-A skill for your coding assistant that stops it from burying the answer. Action first. Steps numbered. Plans stay short and executable. During authorized implementation, it also keeps a visible `Done / Current / Blocker / Next` checkpoint loop. No "Hope this helps!"
+`i-have-adhd-plan` is the planning-focused adaptation for agents and ADHD
+developers. It helps an agent turn a request into a short, executable plan,
+keep the current state visible, and maintain momentum during implementation.
+
+This repository does not replace the original [`i-have-adhd` plugin or skill](https://github.com/ayghri/i-have-adhd).
+That project provides the general ADHD-friendly response style. This project
+builds on the same principles for the planning mode of agents: define the
+goal, break work into bounded actions, identify dependencies and verification,
+and stop at the next meaningful decision boundary.
+
+During authorized implementation, it also keeps a visible
+`Done / Current / Blocker / Next` checkpoint loop. No "Hope this helps!"
+
+## Who it is for
+
+- Developers who want agent plans that are easier to start and finish.
+- Agents that need compact, stateful planning and execution checkpoints.
+- Teams adapting ADHD-friendly interaction patterns to planning workflows.
+
+It is an accessibility style, not a diagnosis or treatment claim. It can be
+used by anyone who benefits from lower-friction plans and visible progress.
 
 
 ## What changes
