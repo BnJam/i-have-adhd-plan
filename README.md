@@ -29,11 +29,11 @@ Install the `i-have-adhd-plan` skill/plugin from this repository: https://github
 
 Or 🔗 [check the installation instructions](INSTALL.md).
 
-If Claude says `Marketplace 'i-have-adhd' already on disk`, remove the stale
+If Claude says `Marketplace 'i-have-adhd-plan' already on disk`, remove the stale
 marketplace registration by its configured name, then add this repository:
 
 ```bash
-claude plugin marketplace remove i-have-adhd
+claude plugin marketplace remove i-have-adhd-plan
 claude plugin marketplace add BnJam/i-have-adhd-plan
 claude plugin install i-have-adhd-plan@i-have-adhd-plan
 ```
